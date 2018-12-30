@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : ""
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Tarun Raheja"
 description              : &description "CS student @ BITS Pilani"

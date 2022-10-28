@@ -32,5 +32,5 @@ In 2019, I completed my Bachelor's Thesis with [Prof. Sreejith GJ](https://www.i
 ## Miscellaneous Cool Stuff
 I will update more things here when I find time.
 
-- I wrote the algorithm for [WeirdSpotify](www.weirdspot.fyi), and the cool folks at [Humit HQ](https://www.humit.app/) built this amazing website. We went viral across the internet!
+- I wrote the algorithm for [WeirdSpotify](https://www.weirdspot.fyi/), and the cool folks at [Humit HQ](https://www.humit.app/) built this amazing website. We went viral across the internet!
 - Cool read : [Harry Potter and the Methods of Rationality](https://www.hpmor.com/).

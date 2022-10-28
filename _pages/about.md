@@ -8,13 +8,23 @@ redirect_from:
   - /about.html
 ---
 
-Ahoy there! 
-======
+Hi! 
+===
 
-I am Tarun Raheja, a senior CS undergrad at BITS Pilani. My current objective of completing my Bachelor's Thesis at IISER Pune has me well occupied, poring over (computational) Quantum Mechanics and Condensed Matter Physics tomes, attempting to grasp the notion of Density matrix Renormalization Groups. 
+I am currently a Master's student at the University of Pennsylvania in Scientific Computing. I am working here with [Prof. Mark Liberman](https://www.ling.upenn.edu/~myl/) at the [Linguistic Data Consortium](https://www.ldc.upenn.edu/).
 
-You will usually find me buried nose deep in some esoteric publication or the other, ranging from Greg Egan to Albert Camus, from Cixin Liu to Douglas Adams, or maybe even Leon Uris or David Foster Wallace on an exceptionally delicious day. I have quite eclectic tastes in what I presume to be intellectual endeavours; an insatiable love for math problems/puzzles (a tip of the hat to you sir, Mr. Smullyan and Mr. Gardner), a patently amateurish mastery of magic with playing cards (rather rusty with the sleight of hand bits by now, to be honest), or a spot of Rubik's cubing (especially with the unusually shaped ones). Besides work, I have been known to dabble in the art of strumming that fantastic instrument which Jimi Hendrix and Guthrie Govan routinely employ to send hordes of people into auditory nirvana. I also regard the game of basketball with a certain fondness, which may or may not be in large part due to the fact that it was the only sport I showed any signifcant promise at (thank you Mr. Rondo).
+I am interested in several research directions : 
+- Theoretical Machine Learning
+- Learning in Physical Systems
+- Natural Language Processing
+- Quantum Information and Computing
+- Computational Condensed Matter
+- Asset Pricing and Stochastic Processes
 
-With regards to media (books/TV/movies) consumption (and understanding popular culture in general), I actively avoid pieces that fall into the public perception of 'mainstream', choosing instead to peruse the more obscure, the more 'arthouse', the 'meta' and the outright ridiculous.
+I have had the good fortune of being advised by some truly awesome people.
 
-I love interesting conversations, so do reach out! :)
+In 2020 I spent an awesome year at [RIKEN, Japan](https://www.riken.jp/en/) advised by [Prof. Neill Lambert](http://dustygeeks.org/Neill/?page_id=21) working in [Prof. Franco Nori's](https://dml.riken.jp/) Theoretical Quantum Physics Group for about a year. We worked on some super cool projects across Open Quantum Systems, Combinatorial Optimization and Machine Learning.
+
+In 2019, I interned at [Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) advised by [Prof. Karthik Ramachandra](https://www.microsoft.com/en-us/research/people/karam/), where we worked on [Project Froid](https://www.microsoft.com/en-us/research/project/froid/).
+
+In 2019, I completed my Bachelor's Thesis with [Prof. Sreejith GJ](https://www.iiserpune.ac.in/research/department/physics/people/faculty/regular-faculty/sreejith-g-j/269) at [IISER, Pune](https://www.iiserpune.ac.in/), where we worked on tailoring density matrix renormalization groups to the Potts' Model.

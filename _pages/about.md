@@ -28,3 +28,9 @@ In 2020 I spent an awesome year at [RIKEN, Japan](https://www.riken.jp/en/) advi
 In 2019, I interned at [Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) advised by [Prof. Karthik Ramachandra](https://www.microsoft.com/en-us/research/people/karam/), where we worked on [Project Froid](https://www.microsoft.com/en-us/research/project/froid/).
 
 In 2019, I completed my Bachelor's Thesis with [Prof. Sreejith GJ](https://www.iiserpune.ac.in/research/department/physics/people/faculty/regular-faculty/sreejith-g-j/269) at [IISER, Pune](https://www.iiserpune.ac.in/), where we worked on tailoring density matrix renormalization groups to the Potts' Model.
+
+## Miscellaneous Cool Stuff
+I will update more things here when I find time.
+
+- I wrote the algorithm for [WeirdSpotify](www.weirdspot.fyi), and the cool folks at [Humit HQ](https://www.humit.app/) built this amazing website. We went viral across the internet!
+- Cool read : [Harry Potter and the Methods of Rationality](https://www.hpmor.com/).

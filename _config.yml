@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
 name                     : &name "Tarun Raheja"
-description              : &description "CS student @ BITS Pilani"
+description              : &description "Scientific Computing @ University of Pennsylvania"
 url                      : https://tehruhn.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tehruhn/tehruhn.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Tarun Raheja"
   avatar           : "doggo.png"
-  bio              : "CS undergrad | BITS Pilani | IISER Pune"
-  location         : "Pune"
+  bio              : "Scientific Computing @ Penn | Past - RIKEN, JP Morgan, Microsoft Research"
+  location         : "Philadelphia"
   employer         :
   googlescholar    :  # "http://yourfullgooglescholarurl.com"
   email            :

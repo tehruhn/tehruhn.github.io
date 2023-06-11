@@ -11,7 +11,10 @@ redirect_from:
 Hi! 
 ===
 
-I am currently a Master's student at the University of Pennsylvania in Scientific Computing. I am working here with [Prof. Mark Liberman](https://www.ling.upenn.edu/~myl/) at the [Linguistic Data Consortium](https://www.ldc.upenn.edu/).
+I am currently a Master's student at the University of Pennsylvania in Scientific Computing. 
+I am advised here by [Prof. Andrea Liu](https://live-sas-physics.pantheon.sas.upenn.edu/people/standing-faculty/andrea-liu), and I work on Learning in Physical Systems.
+
+I also work in NLP with [Prof. Mark Liberman](https://www.ling.upenn.edu/~myl/) and some other great folks at the [Linguistic Data Consortium](https://www.ldc.upenn.edu/).
 
 I am interested in several research directions : 
 - Theoretical Machine Learning

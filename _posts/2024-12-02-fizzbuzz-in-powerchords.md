@@ -93,3 +93,5 @@ why would you do this? because math and metal are just abstract ways of describi
 you can find the full implementation [here](https://github.com/tehruhn/turing_complete_guitar). next up: implementing quicksort with pinch harmonics.
 
 edit: yes, i know the fretboard isn't actually infinite. pls no emails about the halting problem.
+
+credits : used claude for some stuff btw its super cool

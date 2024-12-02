@@ -48,9 +48,9 @@ here's fizzbuzz implemented in power chords:
 00:15 - A5 [sustain]                   // Write output and return
 ```
 
-palm muting represents reading from memory - it's our read head in action. each read is followed by a computation represented by chord progressions. fizzbuzz becomes a triple progression (E5 -> A5 -> D5), fizz is a double (E5 -> A5), and buzz takes a different path (A5 -> D5). the sustain marks our output operation.
+our guitar computer maps basic operations to power chords - E5 for reading, A5 for writing, D5 for computing, G5 for branching, and C5 for loops. we palm mute when reading and sustain when writing output.
 
-you need these read operations (palm mutes) because a turing machine always needs to read before it computes. our guitar implementation faithfully follows this - read (palm mute), compute (progression), write (sustain). it's probably the least efficient implementation of fizzbuzz ever, but it's definitely the most metal.
+you need these read operations (palm mutes) because a turing machine always needs to read before it computes. our guitar implementation faithfully follows this - read (palm muted E5), compute (chord progressions), write (sustained A5). it's probably the least efficient implementation of fizzbuzz ever, but it's definitely the most metal.
 
 here's the code that generates these metal computations:
 
@@ -68,9 +68,9 @@ class GuitarCodeTranslator:
 ```
 
 the rules are simple:
-- read operation = palm mute
-- computations = chord progressions  
-- output = sustain
+- base operations use single chords (E5 read, A5 write, D5 compute, G5 branch, C5 loop)
+- computations use chord progressions
+- palm mute marks reads, sustain marks writes
 - timing follows a 4/4 signature because we're not monsters
 
 under the hood, it walks your python AST and converts each node into a musical pattern. when it sees a modulo operation, it knows to insert a read operation first. every computation needs its input read first - that's what makes it turing complete.

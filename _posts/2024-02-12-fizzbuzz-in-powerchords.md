@@ -8,17 +8,6 @@ tags:
   - computation
   - guitar
 ---
-```markdown
----
-title: 'fizzbuzz in powerchords'
-date: 2024-12-02
-permalink: /posts/2024/12/fizzbuzz-in-powerchords/
-tags:
-  - programming
-  - music
-  - computation
-  - guitar
----
 
 # fizzbuzz in powerchords
 

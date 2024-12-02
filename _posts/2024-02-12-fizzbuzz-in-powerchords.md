@@ -1,7 +1,7 @@
 ---
 title: 'fizzbuzz in powerchords'
-date: 2024-02-12
-permalink: /posts/2024/02/fizzbuzz-in-powerchords/
+date: 2024-12-02
+permalink: /posts/2024/12/fizzbuzz-in-powerchords/
 tags:
   - programming
   - music

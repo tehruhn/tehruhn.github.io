@@ -137,6 +137,24 @@
             margin-bottom: 12px;
         }
 
+        .toc {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+        }
+
+        .toc a:hover {
+            color: var(--link);
+        }
+
         @media (max-width: 600px) {
             header { flex-direction: column; align-items: center; text-align: center; }
             .links { justify-content: center; }
@@ -152,7 +170,7 @@
             <img src="images/profile.png" alt="Tarun Raheja" class="profile-photo">
             <div class="header-info">
                 <h1>Tarun Raheja</h1>
-                <div class="title">Founding ML Engineer @ Kipo AI</div>
+                <div class="title">ML Research Engineer</div>
                 <div class="links">
                     <a href="mailto:tarunraheja1234@gmail.com">Email</a>
                     <a href="https://github.com/tehruhn">GitHub</a>
@@ -164,40 +182,52 @@
             </div>
         </header>
 
+        <nav class="toc">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#publications">Publications</a>
+            <a href="#patents">Patents</a>
+            <a href="#experience">Experience</a>
+            <a href="#reviewing">Reviewing</a>
+            <a href="#advisors">Advisors</a>
+        </nav>
+
         <section id="about">
             <h2>About</h2>
             <p>
-                I'm a Founding ML Engineer at <a href="https://kipo.ai">Kipo AI</a>, building AI for hard American supply chain problems.
+                I'm an ML Research Engineer currently working as Founding ML Engineer at <a href="https://kipo.ai">Kipo AI</a>, building AI for hard American supply chain problems.
                 I completed my MS in Scientific Computing at Penn (4.0 GPA), working with
                 <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> on learning in physical systems
                 and <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> at the <a href="https://www.ldc.upenn.edu/">LDC</a> on NLP.
             </p>
-            <p class="interests">
-                Interests: LLMs, Reasoning, Agents, Computer Vision, Learning in Physical Systems, Open Quantum Systems, Quant Finance
+            <p>
+                My research focuses on <strong>LLM reasoning</strong>, <strong>AI agents</strong>, and <strong>computer vision</strong>.
+                I'm particularly interested in understanding how neural networks learn and reason, building reliable agentic systems,
+                and exploring connections between machine learning and physics. I also have ongoing interests in open quantum systems and quantitative finance.
             </p>
         </section>
 
         <section id="news">
             <h2>News</h2>
-            <div class="news-item"><span class="news-date">Jan 2025</span><span>Won 1st place at Exa AI Discovery Agents Hackathon (50+ teams)</span></div>
-            <div class="news-item"><span class="news-date">Jan 2025</span><span>Paper on Alignment Trilemma accepted to ICLR 2025 BiAlign Workshop</span></div>
-            <div class="news-item"><span class="news-date">Dec 2024</span><span>Paper on Neural Networks for Option Pricing accepted to ICLR 2025 ICBINB</span></div>
-            <div class="news-item"><span class="news-date">Nov 2024</span><span>Won 1st place at Sentient Foundation Werewolf AGIThon (AGI House)</span></div>
-            <div class="news-item"><span class="news-date">Oct 2024</span><span>Paper on Persistent Homology for Tactile Recognition accepted as Oral at NeurIPS 2024</span></div>
-            <div class="news-item"><span class="news-date">Oct 2024</span><span>Survey on Foundation Models & Continual Learning accepted to NeurIPS 2024</span></div>
-            <div class="news-item"><span class="news-date">May 2024</span><span>Paper on LLM Reasoning via Classification accepted to LREC-COLING 2024</span></div>
-            <div class="news-item"><span class="news-date">May 2024</span><span>Joined Kipo AI as Founding ML Engineer (Employee #2)</span></div>
-            <div class="news-item"><span class="news-date">May 2023</span><span>Started internship at Cisco Research</span></div>
-            <div class="news-item"><span class="news-date">Mar 2023</span><span>QuTiP-BoFiN published in Physical Review Research</span></div>
+            <div class="news-item"><span class="news-date">Jan 2025</span><span><strong>Won 1st place</strong> at Exa AI Discovery Agents Hackathon (50+ teams)</span></div>
+            <div class="news-item"><span class="news-date">Jan 2025</span><span>Paper on Alignment Trilemma accepted to <strong>ICLR 2025</strong> Workshop on Bidirectional Human-AI Alignment</span></div>
+            <div class="news-item"><span class="news-date">Dec 2024</span><span>Paper on Neural Networks for Option Pricing accepted to <strong>ICLR 2025</strong> I Can't Believe It's Not Better Workshop</span></div>
+            <div class="news-item"><span class="news-date">Nov 2024</span><span><strong>Won 1st place</strong> at Sentient Foundation Werewolf AGIThon (AGI House)</span></div>
+            <div class="news-item"><span class="news-date">Oct 2024</span><span>Paper on Persistent Homology for Tactile Recognition accepted as <strong>Oral</strong> at <strong>NeurIPS 2024</strong> Workshop on Touch Processing</span></div>
+            <div class="news-item"><span class="news-date">Oct 2024</span><span>Survey on Foundation Models & Continual Learning accepted to <strong>NeurIPS 2024</strong> Workshop on Scalable Continual Learning</span></div>
+            <div class="news-item"><span class="news-date">May 2024</span><span>Paper on LLM Reasoning via Classification accepted to <strong>LREC-COLING 2024</strong></span></div>
+            <div class="news-item"><span class="news-date">May 2024</span><span>Joined <strong>Kipo AI</strong> as Founding ML Engineer (Employee #2)</span></div>
+            <div class="news-item"><span class="news-date">May 2023</span><span>Started internship at <strong>Cisco Research</strong></span></div>
+            <div class="news-item"><span class="news-date">Mar 2023</span><span>QuTiP-BoFiN published in <strong>Physical Review Research</strong></span></div>
             <div class="news-item"><span class="news-date">Jan 2023</span><span>Joined Prof. Andrea Liu's group at UPenn Physics</span></div>
             <div class="news-item"><span class="news-date">Sep 2022</span><span>Joined Linguistic Data Consortium with Prof. Mark Liberman</span></div>
-            <div class="news-item"><span class="news-date">Aug 2022</span><span>Started MS in Scientific Computing at UPenn</span></div>
-            <div class="news-item"><span class="news-date">Aug 2021</span><span>Joined J.P. Morgan as Quantitative Researcher (Rates)</span></div>
+            <div class="news-item"><span class="news-date">Aug 2022</span><span>Started MS in Scientific Computing at <strong>UPenn</strong></span></div>
+            <div class="news-item"><span class="news-date">Aug 2021</span><span>Joined <strong>J.P. Morgan</strong> as Quantitative Researcher (Rates)</span></div>
             <div class="news-item"><span class="news-date">Feb 2021</span><span>Joined Humit as Founding Backend Engineer</span></div>
-            <div class="news-item"><span class="news-date">Oct 2019</span><span>Joined RIKEN Japan with Prof. Franco Nori</span></div>
-            <div class="news-item"><span class="news-date">Jul 2019</span><span>Started internship at Microsoft Research India</span></div>
-            <div class="news-item"><span class="news-date">2020</span><span>CS50 Puzzle Day (Harvard x Facebook): Global winner (8/8)</span></div>
-            <div class="news-item"><span class="news-date">2019</span><span>WorldQuant Challenge: Gold ranking for high Sharpe alphas</span></div>
+            <div class="news-item"><span class="news-date">Oct 2019</span><span>Joined <strong>RIKEN Japan</strong> with Prof. Franco Nori</span></div>
+            <div class="news-item"><span class="news-date">Jul 2019</span><span>Started internship at <strong>Microsoft Research India</strong></span></div>
+            <div class="news-item"><span class="news-date">2020</span><span>CS50 Puzzle Day (Harvard x Facebook): <strong>Global winner</strong> (8/8)</span></div>
+            <div class="news-item"><span class="news-date">2019</span><span>WorldQuant Challenge: <strong>Gold ranking</strong> for high Sharpe alphas</span></div>
         </section>
 
         <section id="publications">
@@ -336,15 +366,17 @@
             </div>
         </section>
 
-        <section id="collaborators">
-            <h2>Collaborators</h2>
+        <section id="advisors">
+            <h2>Advisors</h2>
             <p class="collab-note">I've been fortunate to work with some truly amazing people.</p>
             <div class="collab-list">
                 <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> (UPenn) &middot;
                 <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> (UPenn) &middot;
                 <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a> (RIKEN) &middot;
                 <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a> (RIKEN) &middot;
-                <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a> (MSR)
+                <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a> (MSR) &middot;
+                <a href="https://scholar.google.com/citations?user=rHlWpFUAAAAJ&hl=en">Hidenori Tanaka</a> (Harvard/NTT) &middot;
+                <a href="https://scholar.google.com/citations?user=qj3LDGEAAAAJ&hl=en">Fatih Dinc</a> (Stanford)
             </div>
         </section>
 

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarun Raheja</title>
+    <meta name="description" content="Tarun Raheja - ML Researcher, Founding ML Engineer at Kipo AI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #111;
+            --text-secondary: #555;
+            --link: #0066cc;
+            --border: #ddd;
+            --bg: #fff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 48px;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-info h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .header-info .title {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .links a { color: var(--text-secondary); }
+        .links a:hover { color: var(--link); }
+
+        section { margin-bottom: 40px; }
+
+        h2 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p { margin-bottom: 12px; }
+
+        .interests {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .news-date {
+            color: var(--text-secondary);
+            min-width: 70px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+        }
+
+        .pub { margin-bottom: 16px; }
+        .pub-title { font-weight: 500; }
+        .pub-authors { font-size: 13px; color: var(--text-secondary); }
+        .pub-authors .me { color: var(--text); }
+        .pub-venue { font-size: 13px; color: var(--text-secondary); }
+        .pub-links { font-size: 12px; margin-top: 2px; }
+        .pub-links a { margin-right: 10px; }
+
+        .patent { margin-bottom: 12px; font-size: 13px; }
+        .patent-title { font-weight: 500; }
+        .patent-info { color: var(--text-secondary); }
+
+        .exp { margin-bottom: 12px; }
+        .exp-header { display: flex; justify-content: space-between; }
+        .exp-company { font-weight: 500; }
+        .exp-date { color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+        .exp-role { color: var(--text-secondary); font-size: 13px; }
+
+        .review-list, .collab-list {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .collab-note {
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: center; text-align: center; }
+            .links { justify-content: center; }
+            .exp-header { flex-direction: column; }
+            .news-item { flex-direction: column; gap: 2px; }
+            .news-date { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/profile.png" alt="Tarun Raheja" class="profile-photo">
+            <div class="header-info">
+                <h1>Tarun Raheja</h1>
+                <div class="title">Founding ML Engineer @ Kipo AI</div>
+                <div class="links">
+                    <a href="mailto:tarunraheja1234@gmail.com">Email</a>
+                    <a href="https://github.com/tehruhn">GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=6yv6mjAAAAAJ&hl=en">Scholar</a>
+                    <a href="https://www.linkedin.com/in/tarun-raheja/">LinkedIn</a>
+                    <a href="https://twitter.com/atemyipod">Twitter</a>
+                    <a href="tarun_resume_jan_26.pdf">CV</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I'm a Founding ML Engineer at <a href="https://kipo.ai">Kipo AI</a>, building AI for hard American supply chain problems.
+                I completed my MS in Scientific Computing at Penn (4.0 GPA), working with
+                <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> on learning in physical systems
+                and <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> at the <a href="https://www.ldc.upenn.edu/">LDC</a> on NLP.
+            </p>
+            <p class="interests">
+                Interests: LLMs, Reasoning, Agents, Computer Vision, Learning in Physical Systems, Open Quantum Systems, Quant Finance
+            </p>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-item"><span class="news-date">Jan 2025</span><span>Won 1st place at Exa AI Discovery Agents Hackathon (50+ teams)</span></div>
+            <div class="news-item"><span class="news-date">Jan 2025</span><span>Paper on Alignment Trilemma accepted to ICLR 2025 BiAlign Workshop</span></div>
+            <div class="news-item"><span class="news-date">Dec 2024</span><span>Paper on Neural Networks for Option Pricing accepted to ICLR 2025 ICBINB</span></div>
+            <div class="news-item"><span class="news-date">Nov 2024</span><span>Won 1st place at Sentient Foundation Werewolf AGIThon (AGI House)</span></div>
+            <div class="news-item"><span class="news-date">Oct 2024</span><span>Paper on Persistent Homology for Tactile Recognition accepted as Oral at NeurIPS 2024</span></div>
+            <div class="news-item"><span class="news-date">Oct 2024</span><span>Survey on Foundation Models & Continual Learning accepted to NeurIPS 2024</span></div>
+            <div class="news-item"><span class="news-date">May 2024</span><span>Paper on LLM Reasoning via Classification accepted to LREC-COLING 2024</span></div>
+            <div class="news-item"><span class="news-date">May 2024</span><span>Joined Kipo AI as Founding ML Engineer (Employee #2)</span></div>
+            <div class="news-item"><span class="news-date">May 2023</span><span>Started internship at Cisco Research</span></div>
+            <div class="news-item"><span class="news-date">Mar 2023</span><span>QuTiP-BoFiN published in Physical Review Research</span></div>
+            <div class="news-item"><span class="news-date">Jan 2023</span><span>Joined Prof. Andrea Liu's group at UPenn Physics</span></div>
+            <div class="news-item"><span class="news-date">Sep 2022</span><span>Joined Linguistic Data Consortium with Prof. Mark Liberman</span></div>
+            <div class="news-item"><span class="news-date">Aug 2022</span><span>Started MS in Scientific Computing at UPenn</span></div>
+            <div class="news-item"><span class="news-date">Aug 2021</span><span>Joined J.P. Morgan as Quantitative Researcher (Rates)</span></div>
+            <div class="news-item"><span class="news-date">Feb 2021</span><span>Joined Humit as Founding Backend Engineer</span></div>
+            <div class="news-item"><span class="news-date">Oct 2019</span><span>Joined RIKEN Japan with Prof. Franco Nori</span></div>
+            <div class="news-item"><span class="news-date">Jul 2019</span><span>Started internship at Microsoft Research India</span></div>
+            <div class="news-item"><span class="news-date">2020</span><span>CS50 Puzzle Day (Harvard x Facebook): Global winner (8/8)</span></div>
+            <div class="news-item"><span class="news-date">2019</span><span>WorldQuant Challenge: Gold ranking for high Sharpe alphas</span></div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <div class="pub">
+                <div class="pub-title">QuTiP-BoFiN: A Bosonic and Fermionic Numerical Hierarchical-Equations-of-Motion Library</div>
+                <div class="pub-authors">N. Lambert*, <span class="me">T. Raheja*</span>, S. Cross, P. Menczel, S. Ahmed, A. Pitchford, D. Burgarth, F. Nori</div>
+                <div class="pub-venue">Physical Review Research 5, 013181 (2023)</div>
+                <div class="pub-links">
+                    <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.013181">[Paper]</a>
+                    <a href="https://arxiv.org/abs/2010.10806">[arXiv]</a>
+                    <a href="https://github.com/qutip/qutip-bofin">[Code]</a>
+                </div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">Understanding and Controlling the Geometry of Memory Organization in RNNs</div>
+                <div class="pub-authors">U. Haputhanthri, L. Storan, Y. Jiang, <span class="me">T. Raheja</span>, A. Shai, O. Akengin, N. Miolane, M. Schnitzer, F. Dinc, H. Tanaka</div>
+                <div class="pub-venue">Under Review</div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">Enhancing Large Language Models through Transforming Reasoning Problems into Classification Tasks</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, R. Sinha, A. Deepak, W. Healy, J. Srinivasa, M. Lee, R. Kompella</div>
+                <div class="pub-venue">LREC-COLING 2024</div>
+                <div class="pub-links"><a href="https://aclanthology.org/2024.lrec-main.532/">[ACL Anthology]</a></div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">The Alignment Trilemma: A Theoretical Perspective on Recursive Misalignment and Human-AI Adaptation Dynamics</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
+                <div class="pub-venue">ICLR 2025 Workshop on Bidirectional Human-AI Alignment</div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">On the Limitations of Neural Networks for Option Pricing: Analysis of Volatility Regime Sensitivity</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
+                <div class="pub-venue">ICLR 2025: I Can't Believe It's Not Better</div>
+                <div class="pub-links"><a href="https://openreview.net/forum?id=ZwGpFCUvoQ">[OpenReview]</a></div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">DAGnosis: A Benchmark for Complex DAG-Based Multi-Step Reasoning in Large Language Models</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
+                <div class="pub-venue">Under Review</div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">An Initial Exploration of Using Persistent Homology for Noise-Resilient Tactile Object Recognition</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
+                <div class="pub-venue">NeurIPS 2024 Workshop on Touch Processing (Oral)</div>
+                <div class="pub-links"><a href="https://openreview.net/forum?id=ooojE79aV2">[OpenReview]</a></div>
+            </div>
+
+            <div class="pub">
+                <div class="pub-title">Foundation Models Meet Continual Learning: Recent Advances, Challenges, and Future Directions</div>
+                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
+                <div class="pub-venue">NeurIPS 2024 Workshop on Scalable Continual Learning</div>
+                <div class="pub-links"><a href="https://openreview.net/forum?id=JhGhBJC7FM">[OpenReview]</a></div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Patents</h2>
+            <div class="patent">
+                <div class="patent-title">Automatic Retrieval Augmented Generation with Expanding Context</div>
+                <div class="patent-info">A. Deepak, W. Healy, T. Raheja, J. Srinivasa, R. Kompella, R. Sinha. US Patent App. 18/442,996 (2025)</div>
+            </div>
+            <div class="patent">
+                <div class="patent-title">Cache-Generated Frequently Asked Questions Page</div>
+                <div class="patent-info">T. Raheja, R. Sinha, W. Healy, J. Srinivasa, A. Deepak, R. Kompella. US Patent App. 18/439,888 (2025)</div>
+            </div>
+            <div class="patent">
+                <div class="patent-title">Memory-Based Function Calling for Logical Formulation and Inference for LLMs</div>
+                <div class="patent-info">T. Raheja, A. Deepak, W. Healy, J. Srinivasa, G. Liu, R. Kompella. US Patent App. 18/439,966 (2025)</div>
+            </div>
+            <div class="patent">
+                <div class="patent-title">Performance Monitoring, Mitigation, and Retraining of Large Language Models</div>
+                <div class="patent-info">A. Deepak, R. Sinha, W. Healy, T. Raheja, J. Srinivasa, R. Kompella. US Patent App. 18/440,710 (2025)</div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">Kipo AI</span><span class="exp-date">2024-</span></div>
+                <div class="exp-role">Founding ML Engineer</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">Cisco Research</span><span class="exp-date">2023</span></div>
+                <div class="exp-role">ML Research Intern</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">UPenn - Liu Group</span><span class="exp-date">2023-24</span></div>
+                <div class="exp-role">Graduate Research Assistant (Prof. Andrea Liu)</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">Linguistic Data Consortium</span><span class="exp-date">2022-24</span></div>
+                <div class="exp-role">NLP Research Projects Programmer (Prof. Mark Liberman)</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">J.P. Morgan</span><span class="exp-date">2021-22</span></div>
+                <div class="exp-role">Quantitative Researcher (Rates)</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">Humit</span><span class="exp-date">2021</span></div>
+                <div class="exp-role">Founding Backend Engineer</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">RIKEN, Japan</span><span class="exp-date">2019-20</span></div>
+                <div class="exp-role">Research Assistant (Franco Nori Group)</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">tensoralpha GmbH</span><span class="exp-date">2020</span></div>
+                <div class="exp-role">Quantitative Developer Intern</div>
+            </div>
+            <div class="exp">
+                <div class="exp-header"><span class="exp-company">Microsoft Research</span><span class="exp-date">2019</span></div>
+                <div class="exp-role">Research Intern</div>
+            </div>
+        </section>
+
+        <section id="reviewing">
+            <h2>Reviewing</h2>
+            <div class="review-list">
+                <a href="https://iclr.cc/Conferences/2026">ICLR 2026</a> &middot;
+                <a href="https://iclr.cc/Conferences/2025">ICLR 2025</a> &middot;
+                <a href="https://www2026.thewebconf.org/">ACM WebConf</a> <a href="https://openreview.net/group?id=ACM.org%2FTheWebConf%2F2026%2FWorkshop%2FHCRS">HCRS 2026</a> &middot;
+                <a href="https://efficient-reasoning.github.io/">NeurIPS 2025 Efficient Reasoning</a> &middot;
+                <a href="https://fpineurips.framer.website/">NeurIPS 2025 Probabilistic Inference</a> &middot;
+                <a href="https://redteaming-gen-ai.github.io/">NeurIPS 2024 RedTeaming GenAI</a> &middot;
+                <a href="https://evaleval.github.io/">NeurIPS 2024 EvalEval</a> &middot;
+                <a href="https://www.touchprocessing.org/2024/">NeurIPS 2024 Touch Processing</a> &middot;
+                <a href="https://i-cant-believe-its-not-better.github.io/">ICLR 2026 ICBINB</a>
+            </div>
+        </section>
+
+        <section id="collaborators">
+            <h2>Collaborators</h2>
+            <p class="collab-note">I've been fortunate to work with some truly amazing people.</p>
+            <div class="collab-list">
+                <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> (UPenn) &middot;
+                <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> (UPenn) &middot;
+                <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a> (RIKEN) &middot;
+                <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a> (RIKEN) &middot;
+                <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a> (MSR)
+            </div>
+        </section>
+
+        <section id="misc">
+            <h2>Misc</h2>
+            <p>
+                I wrote the algorithm for <a href="https://www.weirdspot.fyi/">WeirdSpotify</a> with <a href="https://www.humit.app/">Humit</a> - it went viral.
+                Favorite read: <a href="https://www.hpmor.com/">HPMOR</a>.
+            </p>
+            <p>Will add more stuff here.</p>
+        </section>
+    </div>
+</body>
+</html>

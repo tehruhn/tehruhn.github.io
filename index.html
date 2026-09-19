@@ -38,6 +38,15 @@
     #pic img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; }
     h1 { font-size: 34px; font-weight: normal; margin: 0; }
     .byline { font-style: italic; color: #999; font-size: 18px; margin: 6px 0 14px; max-width: 340px; }
+    .xprod { display: block; width: 100%; max-width: 320px; height: auto; margin: 10px 0 16px; overflow: visible; }
+    .xprod text { font: 14px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #aaa; transition: fill .3s; cursor: default; }
+    .xprod text.lit { fill: #333; }
+    .xprod .e { fill: none; stroke: #d5dbe4; stroke-width: 1.2; stroke-dasharray: 3 5; animation: xflow 1.2s linear infinite; transition: stroke .3s, stroke-width .3s; }
+    .xprod .e.on { stroke: var(--link); stroke-width: 1.8; stroke-dasharray: 6 4; animation-duration: .6s; }
+    .xprod .n { fill: #cfd6e0; transition: fill .3s; }
+    .xprod .n.on { fill: var(--link); }
+    @keyframes xflow { to { stroke-dashoffset: -16; } }
+    @media (prefers-reduced-motion: reduce) { .xprod .e { animation: none; } }
     .icons { display: flex; gap: 10px; flex-wrap: wrap; }
     .icons a {
       width: 40px; height: 40px; border-radius: 50%; background: #444;
@@ -109,6 +118,7 @@
       #pic { justify-self: center; }
       #pic img { width: 180px; height: 180px; }
       .byline { margin-left: auto; margin-right: auto; }
+      .xprod { margin: 8px auto 14px; }
       .icons { justify-content: center; }
       .entry { grid-template-columns: 76px 1fr; }
       .when { display: none; }
@@ -129,7 +139,7 @@
     <div id="pic"><img src="images/profile.jpg" alt="Tarun Raheja"></div>
     <div>
       <h1>Tarun Raheja</h1>
-      <div class="byline">{AI, Robotics, Semiconductors} × {Research, Investing}</div>
+      <svg id="xprod" class="xprod" viewBox="0 0 320 80" role="img" aria-label="{AI, Robotics, Semiconductors} × {Research, Investing}"></svg>
       <div class="icons">
         <a href="https://twitter.com/atemyipod" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
         <a href="https://github.com/tehruhn" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
@@ -492,5 +502,38 @@
 
   <footer>Simple HTML + CSS, no frameworks.</footer>
 
+  <script>
+    // {AI, Robotics, Semiconductors} × {Research, Investing}, drawn as the complete bipartite graph
+    (function () {
+      var svg = document.getElementById('xprod'), NS = 'http://www.w3.org/2000/svg';
+      var F = ['AI', 'Robotics', 'Semiconductors'], R = ['Research', 'Investing'];
+      var yf = [14, 40, 66], yr = [27, 53], x1 = 118, x2 = 196, edges = [], hover = false;
+      function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
+      yf.forEach(function (y, i) { yr.forEach(function (y2, j) {
+        var p = el('path', { d: 'M' + x1 + ',' + y + ' C' + (x1 + 40) + ',' + y + ' ' + (x2 - 40) + ',' + y2 + ' ' + x2 + ',' + y2, 'class': 'e' });
+        p.dataset.f = i; p.dataset.r = j; edges.push(p);
+      }); });
+      var tf = F.map(function (t, i) { var e = el('text', { x: x1 - 8, y: yf[i] + 4.5, 'text-anchor': 'end' }); e.textContent = t; return e; });
+      var tr = R.map(function (t, j) { var e = el('text', { x: x2 + 8, y: yr[j] + 4.5 }); e.textContent = t; return e; });
+      var nf = yf.map(function (y) { return el('circle', { cx: x1, cy: y, r: 2.6, 'class': 'n' }); });
+      var nr = yr.map(function (y) { return el('circle', { cx: x2, cy: y, r: 2.6, 'class': 'n' }); });
+      function light(fi, ri) {
+        edges.forEach(function (p) { p.classList.toggle('on', (fi == null || p.dataset.f == fi) && (ri == null || p.dataset.r == ri)); });
+        tf.forEach(function (t, i) { t.classList.toggle('lit', fi == null || i == fi); });
+        tr.forEach(function (t, j) { t.classList.toggle('lit', ri == null || j == ri); });
+        nf.forEach(function (n, i) { n.classList.toggle('on', fi == null || i == fi); });
+        nr.forEach(function (n, j) { n.classList.toggle('on', ri == null || j == ri); });
+      }
+      tf.forEach(function (t, i) { t.onmouseenter = function () { hover = true; light(i, null); }; t.onmouseleave = function () { hover = false; }; });
+      tr.forEach(function (t, j) { t.onmouseenter = function () { hover = true; light(null, j); }; t.onmouseleave = function () { hover = false; }; });
+      var k = 0;
+      function tick() { if (!hover) { light(Math.floor(k / 2) % 3, k % 2); k++; } }
+      var b = svg.getBBox();  // fit the viewBox to the drawing so it centers and aligns cleanly
+      svg.setAttribute('viewBox', [b.x - 2, b.y - 2, b.width + 4, b.height + 4].join(' '));
+      svg.style.maxWidth = (b.width + 4) + 'px';
+      tick();
+      if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) setInterval(tick, 1600);
+    })();
+  </script>
 </body>
 </html>

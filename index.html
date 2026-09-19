@@ -5,17 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tarun Raheja</title>
   <meta name="description" content="Tarun Raheja: {AI, Robotics, Semiconductors} × {Research, Investing}. AI Resident at Accel.">
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <style>
     :root {
-      --text: #333;
-      --muted: #888;
-      --faint: #bbb;
-      --line: #cfcfcf;
-      --link: #1772d0;
-      --venue: #090;
-      --band: #f3f3f3;
-      --bg: #fff;
+      --text: #333; --muted: #888; --faint: #bbb; --soft: #555;
+      --line: #cfcfcf; --hair: #eee; --img-border: #ddd; --pubbar: #aaa;
+      --link: #1772d0; --venue: #090; --band: #f3f3f3; --bg: #fff;
+      --icon-bg: #444; --icon-fg: #fff;
+      --x-text: #aaa; --x-lit: #333; --x-edge: #d5dbe4; --x-node: #cfd6e0;
+      --rule: rgba(0,0,0,.6); --tag-bg: #fde8c8; --tag-fg: #8a4b00;
+      --img-dim: 1;
+      color-scheme: light;
     }
+    :root[data-theme="dark"] {
+      --text: #e6e6e6; --muted: #8e8e8e; --faint: #6a6a6a; --soft: #b3b3b3;
+      --line: #3a3a3a; --hair: #262626; --img-border: #333; --pubbar: #555;
+      --link: #5ea8ff; --venue: #52c476; --band: #181818; --bg: #0f0f0f;
+      --icon-bg: #262626; --icon-fg: #ddd;
+      --x-text: #777; --x-lit: #f0f0f0; --x-edge: #394049; --x-node: #4b535f;
+      --rule: rgba(255,255,255,.35); --tag-bg: #3a2810; --tag-fg: #f2b25c;
+      --img-dim: .88;
+      color-scheme: dark;
+    }
+    body, .band, .icons a, .theme-toggle { transition: background-color .3s, color .3s, border-color .3s; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -39,26 +57,27 @@
     h1 { font-size: 34px; font-weight: normal; margin: 0; }
     .byline { font-style: italic; color: #999; font-size: 18px; margin: 6px 0 14px; max-width: 340px; }
     .xprod { display: block; width: 100%; max-width: 320px; height: auto; margin: 10px 0 16px; overflow: visible; }
-    .xprod text { font: 14px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #aaa; transition: fill .3s; cursor: default; }
-    .xprod text.lit { fill: #333; }
-    .xprod .e { fill: none; stroke: #d5dbe4; stroke-width: 1.2; stroke-dasharray: 3 5; animation: xflow 1.2s linear infinite; transition: stroke .3s, stroke-width .3s; }
+    .xprod text { font: 14px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; fill: var(--x-text); transition: fill .3s; cursor: default; }
+    .xprod text.lit { fill: var(--x-lit); }
+    .xprod .e { fill: none; stroke: var(--x-edge); stroke-width: 1.2; stroke-dasharray: 3 5; animation: xflow 1.2s linear infinite; transition: stroke .3s, stroke-width .3s; }
     .xprod .e.on { stroke: var(--link); stroke-width: 1.8; stroke-dasharray: 6 4; animation-duration: .6s; }
-    .xprod .n { fill: #cfd6e0; transition: fill .3s; }
+    .xprod .n { fill: var(--x-node); transition: fill .3s; }
     .xprod .n.on { fill: var(--link); }
     @keyframes xflow { to { stroke-dashoffset: -16; } }
     @media (prefers-reduced-motion: reduce) { .xprod .e { animation: none; } }
     .icons { display: flex; gap: 10px; flex-wrap: wrap; }
     .icons a {
-      width: 40px; height: 40px; border-radius: 50%; background: #444;
+      width: 40px; height: 40px; border-radius: 50%; background: var(--icon-bg);
       display: inline-flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 12px; font-weight: 600; transition: background .2s;
+      color: var(--icon-fg); font-size: 12px; font-weight: 600;
     }
-    .icons a:hover { background: var(--link); text-decoration: none; }
-    .icons svg { width: 19px; height: 19px; fill: #fff; }
+    .icons a:hover { background: var(--link); color: #fff; text-decoration: none; }
+    .icons a:hover svg { fill: #fff; }
+    .icons svg { width: 19px; height: 19px; fill: var(--icon-fg); }
 
     hr {
       height: 1px; border: 0; margin: 28px 0;
-      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,0));
+      background-image: linear-gradient(to right, transparent, var(--rule), transparent);
     }
 
     /* timeline */
@@ -69,14 +88,14 @@
       position: absolute; top: 0; left: -8px; width: 14px; height: 14px; border-radius: 50%;
       background: var(--line); border: 2px solid var(--bg);
     }
-    .ico img, .mono { width: 68px; height: 68px; border-radius: 8px; object-fit: contain; background: #fff; border: 1px solid #eee; }
+    .ico img, .mono { width: 68px; height: 68px; border-radius: 8px; object-fit: contain; background: #fff; border: 1px solid var(--hair); filter: brightness(var(--img-dim)); }
     .mono {
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 19px; letter-spacing: .5px; color: #fff;
     }
     .desc { font-size: 17px; padding: 0 0 48px 18px; }
-    .projects .fig { width: 100%; max-width: 380px; margin-top: 10px; border: 1px solid #eee; border-radius: 6px; }
-    .desc .fig { width: 100%; max-width: 380px; margin-top: 12px; border: 1px solid #eee; border-radius: 6px; }
+    .projects .fig { width: 100%; max-width: 380px; margin-top: 10px; border: 1px solid var(--hair); filter: brightness(var(--img-dim)); border-radius: 6px; }
+    .desc .fig { width: 100%; max-width: 380px; margin-top: 12px; border: 1px solid var(--hair); border-radius: 6px; }
     .desc .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
 
     /* sections */
@@ -85,16 +104,16 @@
 
     /* papers */
     .paper { display: grid; grid-template-columns: 220px 1fr; gap: 20px; margin-bottom: 22px; align-items: start; }
-    .paper img { width: 220px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; background: #fff; }
+    .paper img { width: 220px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; border: 1px solid var(--img-border); background: #fff; filter: brightness(var(--img-dim)); }
     .pt { font-size: 17px; }
     .pv { color: var(--venue); font-size: 15px; margin-top: 3px; }
-    .pa { font-size: 14px; color: #555; margin-top: 3px; }
+    .pa { font-size: 14px; color: var(--soft); margin-top: 3px; }
     .pa b { color: var(--text); font-weight: 600; }
     .pl { font-size: 14px; margin-top: 4px; }
     .pl a { margin-right: 10px; }
-    .tag { display: inline-block; font-size: 12px; background: #fde8c8; color: #8a4b00; border-radius: 3px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; }
+    .tag { display: inline-block; font-size: 12px; background: var(--tag-bg); color: var(--tag-fg); border-radius: 3px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; }
 
-    .pub { font-size: 15px; border-left: 4px solid #aaa; padding: 2px 0 2px 10px; margin-bottom: 12px; }
+    .pub { font-size: 15px; border-left: 4px solid var(--pubbar); padding: 2px 0 2px 10px; margin-bottom: 12px; }
     .pub .pv { font-size: 14px; }
     .pub .pa { font-size: 14px; }
 
@@ -105,12 +124,12 @@
     details summary { cursor: pointer; color: var(--link); font-size: 15px; margin: 8px 0; }
 
     .projects { list-style: none; padding: 0; margin: 0; }
-    .projects li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+    .projects li { padding: 8px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
     .projects .who { color: var(--muted); }
 
     .dotlist { font-size: 15px; line-height: 1.9; }
 
-    .csub { font-size: 22px; margin: 34px 0 14px; color: #555; }
+    .csub { font-size: 22px; margin: 34px 0 14px; color: var(--soft); }
     footer { color: var(--faint); font-size: 13px; text-align: center; padding: 40px 0 30px; }
 
     @media (max-width: 760px) {
@@ -130,10 +149,27 @@
       .ctitle { font-size: 28px; }
       .news li { grid-template-columns: 70px 1fr; }
     }
+    .theme-toggle {
+      position: fixed; top: 16px; right: 16px; z-index: 10;
+      width: 38px; height: 38px; border-radius: 50%; padding: 0; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg); color: var(--soft); border: 1px solid var(--line);
+    }
+    .theme-toggle:hover { color: var(--link); border-color: var(--link); }
+    .theme-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+    .theme-toggle svg { width: 18px; height: 18px; position: absolute; transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+    .theme-toggle .sun { opacity: 0; transform: rotate(-90deg) scale(.6); }
+    :root[data-theme="dark"] .theme-toggle .sun { opacity: 1; transform: none; }
+    :root[data-theme="dark"] .theme-toggle .moon { opacity: 0; transform: rotate(90deg) scale(.6); }
     .when-m { display: none; color: var(--faint); font-size: 13px; }
   </style>
 </head>
 <body>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+  </button>
 
   <div id="head" class="container">
     <div id="pic"><img src="images/profile.jpg" alt="Tarun Raheja"></div>
@@ -502,6 +538,14 @@
 
   <footer>Simple HTML + CSS, no frameworks.</footer>
 
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', t);
+      try { localStorage.setItem('theme', t); } catch (e) {}
+    });
+  </script>
   <script>
     // {AI, Robotics, Semiconductors} × {Research, Investing}, drawn as the complete bipartite graph
     (function () {

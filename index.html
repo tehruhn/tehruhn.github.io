@@ -1,582 +1,520 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarun Raheja | {AI, Robotics, Semiconductors} × {Research, Investing}</title>
-    <meta name="description" content="Tarun Raheja - AI Resident at Accel, ML Research Engineer">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --text: #111;
-            --text-secondary: #555;
-            --link: #0066cc;
-            --border: #ddd;
-            --bg: #fff;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarun Raheja</title>
+  <meta name="description" content="Tarun Raheja: {AI, Robotics, Semiconductors} × {Research, Investing}. AI Resident at Accel.">
+  <style>
+    :root {
+      --text: #333;
+      --muted: #888;
+      --faint: #bbb;
+      --line: #cfcfcf;
+      --link: #1772d0;
+      --venue: #090;
+      --band: #f3f3f3;
+      --bg: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    .container { max-width: 970px; margin: 0 auto; padding: 0 16px; }
 
-        body {
-            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
+    /* header */
+    #head { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; align-items: center; }
+    #pic { justify-self: end; }
+    #pic img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; }
+    h1 { font-size: 34px; font-weight: normal; margin: 0; }
+    .byline { font-style: italic; color: #999; font-size: 18px; margin: 6px 0 14px; max-width: 340px; }
+    .icons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .icons a {
+      width: 40px; height: 40px; border-radius: 50%; background: #444;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 12px; font-weight: 600; transition: background .2s;
+    }
+    .icons a:hover { background: var(--link); text-decoration: none; }
+    .icons svg { width: 19px; height: 19px; fill: #fff; }
 
-        a { color: var(--link); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+    hr {
+      height: 1px; border: 0; margin: 28px 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,0));
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
+    /* timeline */
+    .entry { display: grid; grid-template-columns: 90px 96px 1fr; }
+    .when { font-size: 14px; color: var(--faint); text-align: right; padding-right: 10px; }
+    .ico { border-left: 2px solid var(--line); position: relative; padding-left: 12px; }
+    .dot {
+      position: absolute; top: 0; left: -8px; width: 14px; height: 14px; border-radius: 50%;
+      background: var(--line); border: 2px solid var(--bg);
+    }
+    .ico img, .mono { width: 68px; height: 68px; border-radius: 8px; object-fit: contain; background: #fff; border: 1px solid #eee; }
+    .mono {
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 19px; letter-spacing: .5px; color: #fff;
+    }
+    .desc { font-size: 17px; padding: 0 0 26px 18px; }
+    .desc .fig { width: 100%; max-width: 380px; margin-top: 12px; border: 1px solid #eee; border-radius: 6px; }
+    .desc .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
 
-        header {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 48px;
-            align-items: flex-start;
-        }
+    /* sections */
+    .ctitle { font-size: 34px; margin: 44px 0 18px; }
+    .band { background: var(--band); padding: 1px 0 30px; margin-top: 40px; }
 
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
+    /* papers */
+    .paper { display: grid; grid-template-columns: 220px 1fr; gap: 20px; margin-bottom: 22px; align-items: start; }
+    .paper img { width: 220px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; background: #fff; }
+    .pt { font-size: 17px; }
+    .pv { color: var(--venue); font-size: 15px; margin-top: 3px; }
+    .pa { font-size: 14px; color: #555; margin-top: 3px; }
+    .pa b { color: var(--text); font-weight: 600; }
+    .pl { font-size: 14px; margin-top: 4px; }
+    .pl a { margin-right: 10px; }
+    .tag { display: inline-block; font-size: 12px; background: #fde8c8; color: #8a4b00; border-radius: 3px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; }
 
-        .header-info h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+    .pub { font-size: 15px; border-left: 4px solid #aaa; padding: 2px 0 2px 10px; margin-bottom: 12px; }
+    .pub .pv { font-size: 14px; }
+    .pub .pa { font-size: 14px; }
 
-        .header-info .title {
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
+    /* news */
+    .news { list-style: none; padding: 0; margin: 0; font-size: 15px; }
+    .news li { display: grid; grid-template-columns: 90px 1fr; gap: 10px; padding: 4px 0; }
+    .news .d { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+    details summary { cursor: pointer; color: var(--link); font-size: 15px; margin: 8px 0; }
 
-        .links {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            font-size: 13px;
-        }
+    .projects { list-style: none; padding: 0; margin: 0; }
+    .projects li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+    .projects .who { color: var(--muted); }
 
-        .links a { color: var(--text-secondary); }
-        .links a:hover { color: var(--link); }
+    .dotlist { font-size: 15px; line-height: 1.9; }
 
-        section { margin-bottom: 40px; }
+    .csub { font-size: 22px; margin: 34px 0 14px; color: #555; }
+    .hl { padding-left: 20px; margin: 0; font-size: 16px; }
+    .hl li { padding: 3px 0; }
+    footer { color: var(--faint); font-size: 13px; text-align: center; padding: 40px 0 30px; }
 
-        h2 {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        p { margin-bottom: 12px; }
-
-        .interests {
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-
-        .news-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 8px;
-            font-size: 13px;
-        }
-
-        .news-date {
-            color: var(--text-secondary);
-            min-width: 70px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-        }
-
-        .pub { margin-bottom: 16px; }
-        .pub-title { font-weight: 500; }
-        .pub-authors { font-size: 13px; color: var(--text-secondary); }
-        .pub-authors .me { color: var(--text); }
-        .pub-venue { font-size: 13px; color: var(--text-secondary); }
-        .pub-links { font-size: 12px; margin-top: 2px; }
-        .pub-links a { margin-right: 10px; }
-
-        .patent { margin-bottom: 12px; font-size: 13px; }
-        .patent-title { font-weight: 500; }
-        .patent-info { color: var(--text-secondary); }
-
-        .exp { margin-bottom: 12px; }
-        .exp-header { display: flex; justify-content: space-between; }
-        .exp-company { font-weight: 500; }
-        .exp-date { color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
-        .exp-role { color: var(--text-secondary); font-size: 13px; }
-
-        .review-list, .collab-list {
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        .collab-note {
-            color: var(--text-secondary);
-            font-size: 13px;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        .toc {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 13px;
-        }
-
-        .toc a {
-            color: var(--text-secondary);
-        }
-
-        .toc a:hover {
-            color: var(--link);
-        }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; align-items: center; text-align: center; }
-            .links { justify-content: center; }
-            .exp-header { flex-direction: column; }
-            .news-item { flex-direction: column; gap: 2px; }
-            .news-date { min-width: auto; }
-        }
-    </style>
+    @media (max-width: 760px) {
+      #head { grid-template-columns: 1fr; text-align: center; gap: 12px; }
+      #pic { justify-self: center; }
+      #pic img { width: 180px; height: 180px; }
+      .byline { margin-left: auto; margin-right: auto; }
+      .icons { justify-content: center; }
+      .entry { grid-template-columns: 76px 1fr; }
+      .when { display: none; }
+      .ico img, .mono { width: 52px; height: 52px; font-size: 15px; }
+      .desc { font-size: 16px; padding-left: 12px; }
+      .desc .when-m { display: block; }
+      .paper { grid-template-columns: 1fr; gap: 8px; }
+      .paper img { width: 100%; max-width: 420px; }
+      .ctitle { font-size: 28px; }
+      .news li { grid-template-columns: 70px 1fr; }
+    }
+    .when-m { display: none; color: var(--faint); font-size: 13px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="images/profile.jpg" alt="Tarun Raheja" class="profile-photo">
-            <div class="header-info">
-                <h1>Tarun Raheja</h1>
-                <div class="title">{AI, Robotics, Semiconductors} × {Research, Investing}</div>
-                <div class="links">
-                    <a href="mailto:tarunraheja1234@gmail.com">Email</a>
-                    <a href="https://github.com/tehruhn">GitHub</a>
-                    <a href="https://scholar.google.com/citations?user=6yv6mjAAAAAJ&hl=en">Scholar</a>
-                    <a href="https://www.linkedin.com/in/tarun-raheja/">LinkedIn</a>
-                    <a href="https://twitter.com/atemyipod">Twitter</a>
-                    <a href="tarun_resume_sep_26.pdf">CV</a>
-                </div>
-            </div>
-        </header>
 
-        <nav class="toc">
-            <a href="#about">About</a>
-            <a href="#news">News</a>
-            <a href="#publications">Publications</a>
-            <a href="#theses">Theses</a>
-            <a href="#patents">Patents</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#blogs-talks">Blogs & Talks</a>
-            <a href="#reviewing">Reviewing</a>
-            <a href="#advisors">Advisors</a>
-        </nav>
-
-        <section id="about">
-            <h2>About</h2>
-            <p>
-                I'm AI Resident to <a href="https://www.accel.com/team/shekhar-kirani">Shekhar Kirani</a> at <a href="https://www.accel.com/">Accel</a>, where I advise on AI investments and help portfolio companies.
-                Previously, I was Head of ML and Founding ML Engineer at <a href="https://kipo.ai">Kipo AI</a>, building AI for U.S. government supply chain use cases.
-                I completed my MS in Scientific Computing at <a href="https://www.upenn.edu/">University of Pennsylvania</a> (4.0 GPA), working with
-                <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> on learning in physical systems
-                and <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> at the <a href="https://www.ldc.upenn.edu/">LDC</a> on NLP.
-                I also interned at <a href="https://research.cisco.com/">Cisco Research</a> with <a href="https://scholar.google.com/citations?user=HtNfeKYAAAAJ&hl=en">Jayanth Srinivasa</a>.
-            </p>
-            <p>
-                Previously: At <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/">Microsoft Research India</a>,
-                I worked on <a href="https://www.microsoft.com/en-us/research/project/froid/">Project Froid</a> (scalar UDF inlining for MSSQL) with <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a>.
-                At <a href="https://www.riken.jp/en/">RIKEN Japan</a>, I worked on open quantum systems with <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a>
-                and <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a>, co-developing <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.013181">QuTiP-BoFiN</a>.
-                At <a href="https://www.jpmorgan.com/">J.P. Morgan</a>, I was a Quantitative Researcher on the Rates desk, building pricing and risk models.
-                At <a href="https://www.tensoralpha.com/">tensoralpha</a> (crypto hedge fund), I worked on crypto derivatives trading strategies with <a href="https://scholar.google.com/citations?user=eVSxiSMAAAAJ&hl=de">Thomas Schmelzer</a>.
-                I hold a BS in Computer Science from <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a>.
-            </p>
-            <p>
-                I work on understanding how neural networks learn and reason: geometry of memory in RNNs, multi-step reasoning in LLMs, learning in physical systems.
-            </p>
-        </section>
-
-        <section id="news">
-            <h2>News</h2>
-            <div class="news-item"><span class="news-date">Jul 2026</span><span>Paper on Complementary LLM Defenses accepted to <strong>GameSec 2026</strong></span></div>
-            <div class="news-item"><span class="news-date">Jul 2026</span><span>Paper on Information Diffusion in LLM-Agent Simulations accepted to <strong>COLM 2026</strong> Workshop on Social Simulation with LLMs</span></div>
-            <div class="news-item"><span class="news-date">Jul 2026</span><span>DimPFN accepted to <strong>COLM 2026</strong> Workshop on Language Models for Scientific Discovery</span></div>
-            <div class="news-item"><span class="news-date">Jul 2026</span><span>Paper on Open Problems in Sampling-Based Planning and Control at <strong>RSS 2026</strong> SBO Workshop</span></div>
-            <div class="news-item"><span class="news-date">Jun 2026</span><span>Invited to mentor startups at <a href="https://www.conquestbits.org/"><strong>Conquest, BITS Pilani</strong></a>, Asia's largest non-diluting startup accelerator</span></div>
-            <div class="news-item"><span class="news-date">Mar 2026</span><span>US Patent <strong>12,572,536</strong> (Cache-Generated FAQ Page) granted</span></div>
-            <div class="news-item"><span class="news-date">Feb 2026</span><span>Joined <strong>Accel</strong> as AI Resident to <strong>Shekhar Kirani</strong>, advising on AI investments and helping portfolio companies</span></div>
-            <div class="news-item"><span class="news-date">Jan 2025</span><span><strong>Won 1st place</strong> at Exa AI Discovery Agents Hackathon (50+ teams)</span></div>
-            <div class="news-item"><span class="news-date">Jan 2025</span><span>Paper on Alignment Trilemma accepted to <strong>ICLR 2025</strong> Workshop on Bidirectional Human-AI Alignment</span></div>
-            <div class="news-item"><span class="news-date">Dec 2024</span><span>Paper on Neural Networks for Option Pricing accepted to <strong>ICLR 2025</strong> I Can't Believe It's Not Better Workshop</span></div>
-            <div class="news-item"><span class="news-date">Nov 2024</span><span><strong>Won 1st place</strong> at Sentient Foundation Werewolf AGIThon (AGI House)</span></div>
-            <div class="news-item"><span class="news-date">Oct 2024</span><span>Paper on Persistent Homology for Tactile Recognition accepted as <strong>Oral</strong> at <strong>NeurIPS 2024</strong> Workshop on Touch Processing</span></div>
-            <div class="news-item"><span class="news-date">Oct 2024</span><span>Survey on Foundation Models & Continual Learning accepted to <strong>NeurIPS 2024</strong> Workshop on Scalable Continual Learning</span></div>
-            <div class="news-item"><span class="news-date">May 2024</span><span>Submitted MS thesis on learning in physical systems with <strong>Andrea Liu</strong> and <strong>Nachi Stern</strong></span></div>
-            <div class="news-item"><span class="news-date">May 2024</span><span>Paper on LLM Reasoning via Classification accepted to <strong>LREC-COLING 2024</strong></span></div>
-            <div class="news-item"><span class="news-date">May 2024</span><span>Joined <strong>Kipo AI</strong> as Founding ML Engineer (Employee #2), later serving as Head of ML</span></div>
-            <div class="news-item"><span class="news-date">May 2023</span><span>Started internship at <strong>Cisco Research</strong></span></div>
-            <div class="news-item"><span class="news-date">Mar 2023</span><span>QuTiP-BoFiN published in <strong>Physical Review Research</strong></span></div>
-            <div class="news-item"><span class="news-date">Jan 2023</span><span>Joined <strong>Prof. Andrea Liu</strong>'s group at UPenn Physics</span></div>
-            <div class="news-item"><span class="news-date">Sep 2022</span><span>Joined Linguistic Data Consortium with <strong>Prof. Mark Liberman</strong></span></div>
-            <div class="news-item"><span class="news-date">Aug 2022</span><span>Started MS in Scientific Computing at <strong>UPenn</strong></span></div>
-            <div class="news-item"><span class="news-date">Aug 2021</span><span>Joined <strong>J.P. Morgan</strong> as Quantitative Researcher (Rates)</span></div>
-            <div class="news-item"><span class="news-date">Feb 2021</span><span>Joined Humit as Founding Backend Engineer</span></div>
-            <div class="news-item"><span class="news-date">2020</span><span>CS50 Puzzle Day (Harvard x Facebook): <strong>Global winner</strong> (8/8)</span></div>
-            <div class="news-item"><span class="news-date">2020</span><span>Joined <strong>tensoralpha GmbH</strong> as Quantitative Developer Intern</span></div>
-            <div class="news-item"><span class="news-date">2020</span><span>Participated in <strong>NTT Coherent Ising Machine</strong> group's research</span></div>
-            <div class="news-item"><span class="news-date">Oct 2019</span><span>Joined <strong>RIKEN Japan</strong> with Prof. Franco Nori</span></div>
-            <div class="news-item"><span class="news-date">Jul 2019</span><span>Started internship at <strong>Microsoft Research India</strong></span></div>
-            <div class="news-item"><span class="news-date">May 2019</span><span>Submitted undergraduate thesis on DMRG for Potts Models with <strong>Prof. Sreejith GJ</strong> (IISER Pune)</span></div>
-            <div class="news-item"><span class="news-date">2019</span><span>Invited to <strong>Qiskit Asia Camp</strong> by IBM</span></div>
-            <div class="news-item"><span class="news-date">2019</span><span>WorldQuant Challenge: <strong>Gold ranking</strong> for high Sharpe alphas</span></div>
-            <div class="news-item"><span class="news-date">Jan 2019</span><span>Started undergraduate thesis research at <strong>IISER Pune</strong></span></div>
-            <div class="news-item"><span class="news-date">Dec 2018</span><span>Offered <strong>WorldQuant WebSim</strong> consultant role for exceptional performance</span></div>
-            <div class="news-item"><span class="news-date">May 2018</span><span>Selected for ACM Summer School in Cryptology at <strong>ISI Calcutta</strong></span></div>
-            <!-- <div class="news-item"><span class="news-date">2018</span><span>GRE: <strong>335/340</strong> (Quant 170, Verbal 165)</span></div> -->
-            <div class="news-item"><span class="news-date">May 2017</span><span>Started R&D internship at <strong>Zero Labs</strong> (NLP)</span></div>
-            <!-- <div class="news-item"><span class="news-date">2015</span><span>Secured <strong>99.7 percentile</strong> out of 1.5 million candidates in <strong>JEE Advanced 2015</strong>; joined <strong>BITS Pilani Hyderabad Campus</strong> for Computer Science</span></div> -->
-            <!-- <div class="news-item"><span class="news-date">2014</span><span>Attended <strong>INSPIRE Winter Science Camp</strong> at PEC University (Govt. of India)</span></div> -->
-            <!-- <div class="news-item"><span class="news-date">2014</span><span><strong>District Topper</strong> in PreRMO (Bathinda), invited to <strong>Regional Mathematical Olympiad (RMO)</strong> Camp for Punjab</span></div> -->
-        </section>
-
-        <section id="publications">
-            <h2>Publications</h2>
-
-            <div class="pub">
-                <div class="pub-title">One Guardrail Is Not Enough: A Security Game for Deploying Complementary LLM Defenses</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">GameSec 2026: Conference on Game Theory and AI for Security</div>
-                <div class="pub-links"><a href="https://www.gamesec-conf.org/program.php">[Program]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">One Crowd, Three Cascades: Information Diffusion in LLM-Agent Simulations Is Governed by Serialization, Not Society</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">COLM 2026 Workshop on Social Simulation with LLMs</div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">DimPFN: Units as an Exact Symmetry for In-Context Learning of Physical Laws</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">COLM 2026 Workshop on Language Models for Scientific Discovery</div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">One Posterior, Many Samplers: Open Problems in Sampling-Based Planning and Control</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">RSS 2026 Workshop on Sampling-Based Optimization in Robotics</div>
-                <div class="pub-links"><a href="https://sites.google.com/view/sampling-workshop/home">[Workshop]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">From RLHF to Direct Alignment: A Theoretical Unification of Preference Learning for Large Language Models</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">arXiv preprint (2026)</div>
-                <div class="pub-links"><a href="https://arxiv.org/abs/2601.06108">[arXiv]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">QuTiP-BoFiN: A Bosonic and Fermionic Numerical Hierarchical-Equations-of-Motion Library</div>
-                <div class="pub-authors">N. Lambert*, <span class="me">T. Raheja*</span>, S. Cross, P. Menczel, S. Ahmed, A. Pitchford, D. Burgarth, F. Nori</div>
-                <div class="pub-venue">Physical Review Research 5, 013181 (2023)</div>
-                <div class="pub-links">
-                    <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.013181">[Paper]</a>
-                    <a href="https://arxiv.org/abs/2010.10806">[arXiv]</a>
-                    <a href="https://github.com/qutip/qutip-bofin">[Code]</a>
-                </div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">Understanding and Controlling the Geometry of Memory Organization in RNNs</div>
-                <div class="pub-authors">U. Haputhanthri, L. Storan, Y. Jiang, <span class="me">T. Raheja</span>, A. Shai, O. Akengin, N. Miolane, M. Schnitzer, F. Dinc, H. Tanaka</div>
-                <div class="pub-venue">Under Review</div>
-                <div class="pub-links"><a href="https://arxiv.org/abs/2502.07256">[arXiv]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">Recent Advancements in LLM Red-Teaming: Techniques, Defenses, and Ethical Considerations</div>
-                <div class="pub-authors"><span class="me">T. Raheja</span>, N. Pochhi, F. Curie</div>
-                <div class="pub-venue">arXiv preprint (2024)</div>
-                <div class="pub-links"><a href="https://arxiv.org/abs/2410.09097">[arXiv]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">Enhancing Large Language Models through Transforming Reasoning Problems into Classification Tasks</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, R. Sinha, A. Deepak, W. Healy, J. Srinivasa, M. Lee, R. Kompella</div>
-                <div class="pub-venue">LREC-COLING 2024</div>
-                <div class="pub-links"><a href="https://aclanthology.org/2024.lrec-main.532/">[ACL Anthology]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">The Alignment Trilemma: A Theoretical Perspective on Recursive Misalignment and Human-AI Adaptation Dynamics</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">ICLR 2025 Workshop on Bidirectional Human-AI Alignment</div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">On the Limitations of Neural Networks for Option Pricing: Analysis of Volatility Regime Sensitivity</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">ICLR 2025: I Can't Believe It's Not Better</div>
-                <div class="pub-links"><a href="https://openreview.net/forum?id=ZwGpFCUvoQ">[OpenReview]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">DAGnosis: A Benchmark for Complex DAG-Based Multi-Step Reasoning in Large Language Models</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">Under Review</div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">An Initial Exploration of Using Persistent Homology for Noise-Resilient Tactile Object Recognition</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">NeurIPS 2024 Workshop on Touch Processing (Oral)</div>
-                <div class="pub-links"><a href="https://openreview.net/forum?id=ooojE79aV2">[OpenReview]</a></div>
-            </div>
-
-            <div class="pub">
-                <div class="pub-title">Foundation Models Meet Continual Learning: Recent Advances, Challenges, and Future Directions</div>
-                <div class="pub-authors"><span class="me">T. Raheja*</span>, N. Pochhi*</div>
-                <div class="pub-venue">NeurIPS 2024 Workshop on Scalable Continual Learning</div>
-                <div class="pub-links"><a href="https://openreview.net/forum?id=JhGhBJC7FM">[OpenReview]</a></div>
-            </div>
-        </section>
-
-        <section id="theses">
-            <h2>Theses</h2>
-            <div class="pub">
-                <div class="pub-title">Learning in Physical Systems</div>
-                <div class="pub-authors">MS Thesis, University of Pennsylvania (2024)</div>
-                <div class="pub-venue">Advisor: Prof. Andrea Liu</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Density Matrix Renormalization Groups for Potts' Model</div>
-                <div class="pub-authors">Undergraduate Thesis, BITS Pilani (2019)</div>
-                <div class="pub-venue">Advisor: Prof. Sreejith GJ (IISER Pune)</div>
-            </div>
-        </section>
-
-        <section id="patents">
-            <h2>Patents</h2>
-            <div class="patent">
-                <div class="patent-title">Cache-Generated Frequently Asked Questions Page</div>
-                <div class="patent-info">T. Raheja, R. Sinha, W. Healy, J. Srinivasa, A. Deepak, R. Kompella, A. Payani. <strong>US Patent 12,572,536</strong> (granted Mar 2026)</div>
-            </div>
-            <div class="patent">
-                <div class="patent-title">Automatic Retrieval Augmented Generation with Expanding Context</div>
-                <div class="patent-info">A. Deepak, W. Healy, T. Raheja, J. Srinivasa, R. Kompella, R. Sinha. US Patent App. 18/442,996 (2025)</div>
-            </div>
-            <div class="patent">
-                <div class="patent-title">Memory-Based Function Calling for Logical Formulation and Inference for LLMs</div>
-                <div class="patent-info">T. Raheja, A. Deepak, W. Healy, J. Srinivasa, G. Liu, R. Kompella. US Patent App. 18/439,966 (2025)</div>
-            </div>
-            <div class="patent">
-                <div class="patent-title">Performance Monitoring, Mitigation, and Retraining of Large Language Models</div>
-                <div class="patent-info">A. Deepak, R. Sinha, W. Healy, T. Raheja, J. Srinivasa, R. Kompella. US Patent App. 18/440,710 (2025)</div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Accel</span><span class="exp-date">2026-</span></div>
-                <div class="exp-role">AI Resident to Shekhar Kirani (AI investing + portfolio support)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Kipo AI</span><span class="exp-date">2024-26</span></div>
-                <div class="exp-role">Head of ML, Founding ML Engineer</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Cisco Research</span><span class="exp-date">2023</span></div>
-                <div class="exp-role">ML Research Intern</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">UPenn - Liu Group</span><span class="exp-date">2023-24</span></div>
-                <div class="exp-role">Graduate Research Assistant (Prof. Andrea Liu)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Linguistic Data Consortium</span><span class="exp-date">2022-24</span></div>
-                <div class="exp-role">NLP Research Projects Programmer (Prof. Mark Liberman)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">J.P. Morgan</span><span class="exp-date">2021-22</span></div>
-                <div class="exp-role">Quantitative Researcher (Rates)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Humit</span><span class="exp-date">2021</span></div>
-                <div class="exp-role">Founding Backend Engineer</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">RIKEN, Japan</span><span class="exp-date">2019-20</span></div>
-                <div class="exp-role">Research Assistant (Franco Nori Group)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">tensoralpha GmbH</span><span class="exp-date">2020</span></div>
-                <div class="exp-role">Quantitative Developer Intern (Thomas Schmelzer)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Microsoft Research</span><span class="exp-date">2019</span></div>
-                <div class="exp-role">Research Intern</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">IISER Pune</span><span class="exp-date">2018-19</span></div>
-                <div class="exp-role">Undergraduate Thesis (Prof. Sreejith GJ)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">WorldQuant</span><span class="exp-date">2018-19</span></div>
-                <div class="exp-role">Research Consultant</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">ISI Calcutta</span><span class="exp-date">2018</span></div>
-                <div class="exp-role">Cryptology Research Intern (ACM Summer School)</div>
-            </div>
-            <div class="exp">
-                <div class="exp-header"><span class="exp-company">Zero Labs</span><span class="exp-date">2017</span></div>
-                <div class="exp-role">R&D Intern (NLP)</div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Research Projects</h2>
-            <div class="pub">
-                <div class="pub-title">Exceptional Points in Non-Hermitian Quantum Systems</div>
-                <div class="pub-authors">with Fabrizio Minganti (RIKEN)</div>
-                <div class="pub-venue">Studied exceptional points and exotic properties of large non-Hermitian systems using a novel algorithm I developed</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Noisy Mean Field Annealing (NMFA) for Combinatorial Optimization</div>
-                <div class="pub-authors">with Neill Lambert, Clemens Gneiting, and Ken Funo (RIKEN)</div>
-                <div class="pub-venue">Optimized NMFA for NP-hard problems using ideas from quantum thermodynamics</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Quantum Overlapping Tomography</div>
-                <div class="pub-authors">with Rudy Raymond (IBM Research); IBM Qiskit Asia Camp</div>
-                <div class="pub-venue">Developed quantum overlapping tomography module using perfect hash families based on Frank Wilczek's paper; studied quality of entanglement in IBM's machines</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">PyFroid</div>
-                <div class="pub-authors">with Karthik Ramachandra (Microsoft Research India)</div>
-                <div class="pub-venue">Plugin to Pandas; achieved 100x speedup on certain operations through lazy evaluation</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Ontology-Aware Medical Concept Extraction</div>
-                <div class="pub-authors">with Prof. Lyle Ungar (Penn)</div>
-                <div class="pub-venue">BiLSTM-CRF and Transformers with UMLS embeddings for EHR named entity recognition</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Speech Event Segmentation</div>
-                <div class="pub-authors">with Neville Ryant (Linguistic Data Consortium)</div>
-                <div class="pub-venue">Advanced metrics for speech segmentation via quantile analysis of intersyllable durations; stochastic point processes and neural equivalents for syllable event modeling</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Neural Network Potentials for Molecular Dynamics</div>
-                <div class="pub-authors">with Prof. Paris Perdikaris (Penn)</div>
-                <div class="pub-venue">ResNet-based NNPs for copper thermal expansion, validated with LAMMPS</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Quantum & Classical Key Exchange Protocols</div>
-                <div class="pub-authors">ACM Summer School, ISI Calcutta</div>
-                <div class="pub-venue">Selected among top 50 undergrads nationwide for cryptology research program</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Computational Geometry Library</div>
-                <div class="pub-authors">with Prof. Tathagata Ray (BITS Pilani)</div>
-                <div class="pub-venue">C++ implementations of convex hull algorithms, polygon triangulation, point visibility</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">MPI Parallel Code Optimization</div>
-                <div class="pub-authors">with Prof. N. Anil (BITS Pilani)</div>
-                <div class="pub-venue">PETSc-based optimization for aerofoil sensitivity analysis on GPU-CPU hybrid systems</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">Data Envelopment Analysis for Student Performance</div>
-                <div class="pub-authors">with Prof. Srinivasa Raju (BITS Pilani)</div>
-                <div class="pub-venue">DEA-based efficiency analysis of student input factors</div>
-            </div>
-        </section>
-
-        <section id="blogs-talks">
-            <h2>Blogs & Talks</h2>
-            <div class="pub">
-                <div class="pub-title"><a href="https://outshift.cisco.com/blog/mastering-the-art-of-prompting-for-large-language-models-reducing-hallucination-and-improving-reasoning">Mastering the Art of Prompting for Large Language Models: Reducing Hallucination and Improving Reasoning</a></div>
-                <div class="pub-venue">Cisco Outshift Blog (2024)</div>
-            </div>
-            <div class="pub">
-                <div class="pub-title">An Initial Exploration of Using Persistent Homology for Noise-Resilient Tactile Object Recognition</div>
-                <div class="pub-venue">Oral Presentation, NeurIPS 2024 Workshop on Touch Processing (Dec 2024)</div>
-            </div>
-        </section>
-
-        <section id="reviewing">
-            <h2>Reviewing</h2>
-            <div class="review-list">
-                <a href="https://iclr.cc/Conferences/2027">ICLR 2027</a> &middot;
-                <a href="https://neurips.cc/Conferences/2026">NeurIPS 2026</a> &middot;
-                <a href="https://sites.google.com/view/dynafrontneurips26">NeurIPS 2026 Workshop DynaFront</a> &middot;
-                <a href="https://lm4sci.github.io/">COLM 2026 Workshop LM4Sci</a> &middot;
-                <a href="https://sites.google.com/view/social-sims-with-llms">COLM 2026 Workshop Social Sim</a> &middot;
-                <a href="https://iclr.cc/Conferences/2026">ICLR 2026</a> &middot;
-                <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/ICBINB/Reviewers">ICLR 2026 Workshop ICBINB</a> &middot;
-                <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/MM_Intelligence/Reviewers">ICLR 2026 Workshop MM Intelligence</a> &middot;
-                <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/P-AGI/Reviewers">ICLR 2026 Workshop P-AGI</a> &middot;
-                <a href="https://iclr.cc/Conferences/2025">ICLR 2025</a> &middot;
-                <a href="https://www2026.thewebconf.org/">ACM WebConf</a> <a href="https://openreview.net/group?id=ACM.org%2FTheWebConf%2F2026%2FWorkshop%2FHCRS">HCRS 2026</a> &middot;
-                <a href="https://efficient-reasoning.github.io/">NeurIPS 2025 Efficient Reasoning</a> &middot;
-                <a href="https://fpineurips.framer.website/">NeurIPS 2025 Probabilistic Inference</a> &middot;
-                <a href="https://redteaming-gen-ai.github.io/">NeurIPS 2024 RedTeaming GenAI</a> &middot;
-                <a href="https://evaleval.github.io/">NeurIPS 2024 EvalEval</a> &middot;
-                <a href="https://www.touchprocessing.org/2024/">NeurIPS 2024 Touch Processing</a>
-            </div>
-        </section>
-
-        <section id="advisors">
-            <h2>Advisors</h2>
-            <p class="collab-note">I've been fortunate to work with some truly amazing people.</p>
-            <div class="collab-list">
-                <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> (UPenn) &middot;
-                <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> (UPenn) &middot;
-                <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a> (RIKEN) &middot;
-                <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a> (RIKEN) &middot;
-                <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a> (MSR) &middot;
-                <a href="https://scholar.google.com/citations?user=eVSxiSMAAAAJ&hl=de">Thomas Schmelzer</a> (tensoralpha) &middot;
-                <a href="https://scholar.google.com/citations?user=rHlWpFUAAAAJ&hl=en">Hidenori Tanaka</a> (Harvard/NTT) &middot;
-                <a href="https://scholar.google.com/citations?user=qj3LDGEAAAAJ&hl=en">Fatih Dinc</a> (Stanford) &middot;
-                <a href="https://scholar.google.com/citations?user=gV_XNa0AAAAJ&hl=en">Menachem Stern</a> (UPenn) &middot;
-                <a href="https://scholar.google.co.in/citations?user=G4n2WsAAAAAJ&hl=en">Sreejith GJ</a> (IISER Pune) &middot;
-                <a href="https://scholar.google.com/citations?user=HtNfeKYAAAAJ&hl=en">Jayanth Srinivasa</a> (Cisco Research)
-            </div>
-        </section>
-
-        <section id="misc">
-            <h2>Misc</h2>
-            <p>
-                I wrote the algorithm for <a href="https://www.weirdspot.fyi/">WeirdSpotify</a> with <a href="https://www.humit.app/">Humit</a> - it went viral.
-                Favorite read: <a href="https://www.hpmor.com/">HPMOR</a>.
-            </p>
-            <p>Will add more stuff here.</p>
-        </section>
+  <div id="head" class="container">
+    <div id="pic"><img src="images/profile.jpg" alt="Tarun Raheja"></div>
+    <div>
+      <h1>Tarun Raheja</h1>
+      <div class="byline">{AI, Robotics, Semiconductors} × {Research, Investing}</div>
+      <div class="icons">
+        <a href="https://twitter.com/atemyipod" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+        <a href="https://github.com/tehruhn" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=6yv6mjAAAAAJ&hl=en" title="Google Scholar"><svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+        <a href="https://www.linkedin.com/in/tarun-raheja/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="mailto:tarunraheja1234@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1.4 2L12 12.2 20.6 6H3.4zM21 7.6l-9 6.5-9-6.5V18h18V7.6z"/></svg></a>
+        <a href="tarun_resume_sep_26.pdf" title="CV">CV</a>
+      </div>
     </div>
+  </div>
+
+  <hr>
+
+  <div id="history" class="container">
+
+    <div class="entry">
+      <div class="when">2026 -</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/accel.png" alt="Accel"></div>
+      <div class="desc">
+        <span class="when-m">2026 -</span>
+        I'm AI Resident to <a href="https://www.accel.com/team/shekhar-kirani">Shekhar Kirani</a> at <a href="https://www.accel.com/">Accel</a>, where I advise on AI investments and help portfolio companies. I still do <a href="#papers">research</a> on the side, and I mentor startups at <a href="https://www.conquestbits.org/">Conquest, BITS Pilani</a>.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2024 - 2026</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/kipo.png" alt="Kipo AI"></div>
+      <div class="desc">
+        <span class="when-m">2024 - 2026</span>
+        I was employee #2 and Founding ML Engineer at <a href="https://kipo.ai">Kipo AI</a>, later Head of ML, building AI for U.S. government supply chain use cases.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2023</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/cisco.png" alt="Cisco"></div>
+      <div class="desc">
+        <span class="when-m">2023</span>
+        ML research intern at <a href="https://research.cisco.com/">Cisco Research</a> with <a href="https://scholar.google.com/citations?user=HtNfeKYAAAAJ&hl=en">Jayanth Srinivasa</a>, where I turned LLM reasoning problems into classification tasks (<a href="https://aclanthology.org/2024.lrec-main.532/">LREC-COLING 2024</a>). That work also produced one granted US patent and three pending applications.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2022 - 2024</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/upenn.png" alt="UPenn"></div>
+      <div class="desc">
+        <span class="when-m">2022 - 2024</span>
+        MS in Scientific Computing at the <a href="https://www.upenn.edu/">University of Pennsylvania</a> (4.0 GPA). My thesis was on learning in physical systems with <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> and <a href="https://scholar.google.com/citations?user=gV_XNa0AAAAJ&hl=en">Nachi Stern</a>. In parallel I worked on NLP and speech segmentation with <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> at the <a href="https://www.ldc.upenn.edu/">Linguistic Data Consortium</a>.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2021 - 2022</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/jpmorgan.png" alt="J.P. Morgan"></div>
+      <div class="desc">
+        <span class="when-m">2021 - 2022</span>
+        Quantitative Researcher on the Rates desk at <a href="https://www.jpmorgan.com/">J.P. Morgan</a>, building pricing and risk models.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2020</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/ntt.png" alt="NTT"></div>
+      <div class="desc">
+        <span class="when-m">2020</span>
+        I took part in research with NTT's <a href="https://phi.ntt-research.com/">Coherent Ising Machine</a> group. A coherent Ising machine is optical hardware that solves hard combinatorial optimization problems: each laser pulse circulating in a fiber ring acts as a spin, and measurement-feedback couples the pulses until the light settles into a low-energy solution.
+        <img class="fig" src="images/pubs/cim.jpg" alt="Coherent Ising machine schematic: laser pulses in a fiber ring as spins, coupled via measurement and feedback">
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2019 - 2020</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/riken.png" alt="RIKEN"></div>
+      <div class="desc">
+        <span class="when-m">2019 - 2020</span>
+        Research assistant at <a href="https://www.riken.jp/en/">RIKEN, Japan</a> in <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a>'s group, working on open quantum systems with <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a>. I co-developed <a href="https://github.com/qutip/qutip-bofin">QuTiP-BoFiN</a> and worked on exceptional points and noisy mean-field annealing. In 2020 I also built crypto derivatives strategies at <a href="https://www.tensoralpha.com/">tensoralpha</a> with <a href="https://scholar.google.com/citations?user=eVSxiSMAAAAJ&hl=de">Thomas Schmelzer</a>.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2019</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/microsoft.png" alt="Microsoft Research"></div>
+      <div class="desc">
+        <span class="when-m">2019</span>
+        Research intern at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/">Microsoft Research India</a> on <a href="https://www.microsoft.com/en-us/research/project/froid/">Project Froid</a> (scalar UDF inlining for SQL Server) with <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a>. I built PyFroid, a Pandas plugin that got up to 100x speedups via lazy evaluation.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2015 - 2019</div>
+      <div class="ico"><div class="dot"></div><img src="images/logos/bits.png" alt="BITS Pilani"></div>
+      <div class="desc">
+        <span class="when-m">2015 - 2019</span>
+        BS in Computer Science at <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a>. My undergraduate thesis was on DMRG for Potts models with <a href="https://scholar.google.co.in/citations?user=G4n2WsAAAAAJ&hl=en">Sreejith GJ</a> at IISER Pune. Along the way I got a gold ranking in the <a href="https://www.worldquant.com/">WorldQuant</a> challenge and became a research consultant there, was invited to IBM's Qiskit Asia Camp, and was one of 50 undergrads nationwide picked for the ACM cryptology school at ISI Calcutta.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ctitle">research</div>
+    <p style="margin-top:0">I work on understanding how neural networks learn and reason: the geometry of memory in RNNs, multi-step reasoning in LLMs, learning in physical systems. Lately that means LLM security, agent simulations, in-context learning for science, and sampling-based planning for robotics.</p>
+  </div>
+
+  <div class="container">
+    <div class="ctitle">highlights</div>
+    <ul class="hl">
+      <li><b>Co-developer of <a href="https://github.com/qutip/qutip-bofin">QuTiP-BoFiN</a></b>, the bosonic and fermionic HEOM solver for <a href="https://qutip.org/">QuTiP</a>, the standard open-source toolkit for open quantum systems (Physical Review Research, 2023)</li>
+      <li>Research with <b>NTT's Coherent Ising Machine</b> group on optical hardware for combinatorial optimization</li>
+      <li><b>US Patent 12,572,536</b> granted, plus 3 pending applications, from my LLM work at Cisco Research</li>
+      <li><b>Oral</b> at the NeurIPS 2024 Workshop on Touch Processing</li>
+      <li><b>1st place</b>, Exa AI Discovery Agents Hackathon, out of 50+ teams (2025)</li>
+      <li><b>1st place</b>, Sentient Foundation Werewolf AGIThon at AGI House (2024)</li>
+      <li><b>Global winner</b>, CS50 Puzzle Day by Harvard &times; Facebook, 8/8 solved (2020)</li>
+      <li><b>Gold ranking</b> for high-Sharpe alphas in the WorldQuant Challenge, then brought on as a research consultant</li>
+      <li>Reviewer for ICLR and NeurIPS; startup mentor at <a href="https://www.conquestbits.org/">Conquest</a>, Asia's largest non-diluting accelerator</li>
+    </ul>
+  </div>
+
+  <div class="band">
+    <div id="papers" class="container">
+      <div class="ctitle">selected papers</div>
+      <div class="paper">
+        <img src="images/pubs/bofin.jpg" alt="HEOM dynamics of a two-level system">
+        <div>
+          <div class="pt">QuTiP-BoFiN: A Bosonic and Fermionic Numerical Hierarchical-Equations-of-Motion Library</div>
+          <div class="pv">Physical Review Research 5, 013181 (2023)</div>
+          <div class="pa">N. Lambert*, <b>T. Raheja*</b>, S. Cross, P. Menczel, S. Ahmed, A. Pitchford, D. Burgarth, F. Nori</div>
+          <div class="pl">
+            <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.013181">paper</a>
+            <a href="https://arxiv.org/abs/2010.10806">arXiv</a>
+            <a href="https://github.com/qutip/qutip-bofin">code</a>
+          </div>
+        </div>
+      </div>
+      <div class="paper">
+        <img src="images/pubs/gamesec.jpg" alt="Randomized portfolio of guardrails">
+        <div>
+          <div class="pt">One Guardrail Is Not Enough: A Security Game for Deploying Complementary LLM Defenses</div>
+          <div class="pv">GameSec 2026</div>
+          <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+          <div class="pl"><a href="https://www.gamesec-conf.org/program.php">program</a></div>
+        </div>
+      </div>
+
+
+      <div class="paper">
+        <img src="images/pubs/lrec.jpg" alt="Pipeline mapping reasoning sentences to constraint primitives">
+        <div>
+          <div class="pt">Enhancing Large Language Models through Transforming Reasoning Problems into Classification Tasks</div>
+          <div class="pv">LREC-COLING 2024</div>
+          <div class="pa"><b>T. Raheja*</b>, R. Sinha, A. Deepak, W. Healy, J. Srinivasa, M. Lee, R. Kompella</div>
+          <div class="pl"><a href="https://aclanthology.org/2024.lrec-main.532/">ACL Anthology</a></div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img src="images/pubs/rnn.jpg" alt="Delayed addition task for an RNN">
+        <div>
+          <div class="pt">Understanding and Controlling the Geometry of Memory Organization in RNNs</div>
+          <div class="pv">Under review</div>
+          <div class="pa">U. Haputhanthri, L. Storan, Y. Jiang, <b>T. Raheja</b>, A. Shai, O. Akengin, N. Miolane, M. Schnitzer, F. Dinc, H. Tanaka</div>
+          <div class="pl"><a href="https://arxiv.org/abs/2502.07256">arXiv</a></div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img src="images/pubs/dimpfn.jpg" alt="Dimensionless Pi-groups fed to a set transformer">
+        <div>
+          <div class="pt">DimPFN: Units as an Exact Symmetry for In-Context Learning of Physical Laws</div>
+          <div class="pv">COLM 2026 Workshop on Language Models for Scientific Discovery</div>
+          <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img src="images/pubs/socialsim.jpg" alt="Three serializations of one social fact lead to three cascades">
+        <div>
+          <div class="pt">One Crowd, Three Cascades: Information Diffusion in LLM-Agent Simulations Is Governed by Serialization, Not Society</div>
+          <div class="pv">COLM 2026 Workshop on Social Simulation with LLMs</div>
+          <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img src="images/pubs/tactile.jpg" alt="Tactile point cloud and persistence barcode">
+        <div>
+          <div class="pt">An Initial Exploration of Using Persistent Homology for Noise-Resilient Tactile Object Recognition <span class="tag">oral</span></div>
+          <div class="pv">NeurIPS 2024 Workshop on Touch Processing</div>
+          <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+          <div class="pl"><a href="https://openreview.net/forum?id=ooojE79aV2">OpenReview</a></div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img src="images/pubs/sampling.jpg" alt="One posterior, many samplers">
+        <div>
+          <div class="pt">One Posterior, Many Samplers: Open Problems in Sampling-Based Planning and Control</div>
+          <div class="pv">RSS 2026 Workshop on Sampling-Based Optimization in Robotics</div>
+          <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+          <div class="pl"><a href="https://sites.google.com/view/sampling-workshop/home">workshop</a></div>
+        </div>
+      </div>
+
+      <div class="csub">more papers</div>
+      <div class="pub">
+        <div>From RLHF to Direct Alignment: A Theoretical Unification of Preference Learning for Large Language Models</div>
+        <div class="pv">arXiv 2026 &middot; <a href="https://arxiv.org/abs/2601.06108">arXiv</a></div>
+        <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+      </div>
+      <div class="pub">
+        <div>Recent Advancements in LLM Red-Teaming: Techniques, Defenses, and Ethical Considerations</div>
+        <div class="pv">arXiv 2024 &middot; <a href="https://arxiv.org/abs/2410.09097">arXiv</a></div>
+        <div class="pa"><b>T. Raheja</b>, N. Pochhi, F. Curie</div>
+      </div>
+      <div class="pub">
+        <div>Foundation Models Meet Continual Learning: Recent Advances, Challenges, and Future Directions</div>
+        <div class="pv">NeurIPS 2024 Workshop on Scalable Continual Learning &middot; <a href="https://openreview.net/forum?id=JhGhBJC7FM">OpenReview</a></div>
+        <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+      </div>
+      <div class="pub">
+        <div>The Alignment Trilemma: A Theoretical Perspective on Recursive Misalignment and Human-AI Adaptation Dynamics</div>
+        <div class="pv">ICLR 2025 Workshop on Bidirectional Human-AI Alignment</div>
+        <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+      </div>
+      <div class="pub">
+        <div>On the Limitations of Neural Networks for Option Pricing: Analysis of Volatility Regime Sensitivity</div>
+        <div class="pv">ICLR 2025 Workshop: I Can't Believe It's Not Better &middot; <a href="https://openreview.net/forum?id=ZwGpFCUvoQ">OpenReview</a></div>
+        <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+      </div>
+      <div class="pub">
+        <div>DAGnosis: A Benchmark for Complex DAG-Based Multi-Step Reasoning in Large Language Models</div>
+        <div class="pv">Under review</div>
+        <div class="pa"><b>T. Raheja*</b>, N. Pochhi*</div>
+      </div>
+
+      <div style="font-size:14px;color:var(--muted)">* equal contribution</div>
+    </div>
+  </div>
+
+  <div id="news" class="container">
+    <div class="ctitle">news</div>
+    <ul class="news">
+      <li><span class="d">Jul 2026</span><span>Paper on complementary LLM defenses accepted to <b>GameSec 2026</b></span></li>
+      <li><span class="d">Jul 2026</span><span>Paper on information diffusion in LLM-agent simulations accepted to the <b>COLM 2026</b> Workshop on Social Simulation with LLMs</span></li>
+      <li><span class="d">Jul 2026</span><span>DimPFN accepted to the <b>COLM 2026</b> Workshop on Language Models for Scientific Discovery</span></li>
+      <li><span class="d">Jul 2026</span><span>Paper on open problems in sampling-based planning and control at the <b>RSS 2026</b> SBO Workshop</span></li>
+      <li><span class="d">Jun 2026</span><span>Invited to mentor startups at <a href="https://www.conquestbits.org/">Conquest, BITS Pilani</a>, Asia's largest non-diluting startup accelerator</span></li>
+      <li><span class="d">Mar 2026</span><span>US Patent <b>12,572,536</b> (Cache-Generated FAQ Page) granted</span></li>
+      <li><span class="d">Feb 2026</span><span>Joined <b>Accel</b> as AI Resident to <b>Shekhar Kirani</b>, advising on AI investments and helping portfolio companies</span></li>
+      <li><span class="d">Jan 2026</span><span>Preprint unifying RLHF and direct alignment methods posted to <a href="https://arxiv.org/abs/2601.06108">arXiv</a></span></li>
+      <li><span class="d">Jan 2025</span><span><b>1st place</b> at the Exa AI Discovery Agents Hackathon (50+ teams)</span></li>
+      <li><span class="d">Jan 2025</span><span>Alignment Trilemma accepted to the <b>ICLR 2025</b> Workshop on Bidirectional Human-AI Alignment</span></li>
+      <li><span class="d">Dec 2024</span><span>Paper on neural networks for option pricing accepted to the <b>ICLR 2025</b> I Can't Believe It's Not Better Workshop</span></li>
+      <li><span class="d">Nov 2024</span><span><b>1st place</b> at the Sentient Foundation Werewolf AGIThon (AGI House)</span></li>
+      <li><span class="d">Oct 2024</span><span>Persistent homology for tactile recognition accepted as an <b>oral</b> at the <b>NeurIPS 2024</b> Workshop on Touch Processing</span></li>
+      <li><span class="d">Oct 2024</span><span>Survey on foundation models and continual learning accepted to the <b>NeurIPS 2024</b> Workshop on Scalable Continual Learning</span></li>
+      <li><span class="d">May 2024</span><span>Submitted MS thesis on learning in physical systems with <b>Andrea Liu</b> and <b>Nachi Stern</b></span></li>
+      <li><span class="d">May 2024</span><span>Paper on LLM reasoning via classification accepted to <b>LREC-COLING 2024</b></span></li>
+      <li><span class="d">May 2024</span><span>Joined <b>Kipo AI</b> as Founding ML Engineer (employee #2), later Head of ML</span></li>
+      <li><span class="d">May 2023</span><span>Started ML research internship at <b>Cisco Research</b></span></li>
+      <li><span class="d">Mar 2023</span><span><b>QuTiP-BoFiN</b> published in <b>Physical Review Research</b></span></li>
+      <li><span class="d">Jan 2023</span><span>Joined <b>Andrea Liu</b>'s group at UPenn Physics</span></li>
+      <li><span class="d">Sep 2022</span><span>Joined the Linguistic Data Consortium with <b>Mark Liberman</b></span></li>
+      <li><span class="d">Aug 2022</span><span>Started MS in Scientific Computing at <b>UPenn</b></span></li>
+      <li><span class="d">Aug 2021</span><span>Joined <b>J.P. Morgan</b> as Quantitative Researcher (Rates)</span></li>
+      <li><span class="d">Oct 2020</span><span><b>QuTiP-BoFiN</b> preprint posted to <a href="https://arxiv.org/abs/2010.10806">arXiv</a></span></li>
+      <li><span class="d">2020</span><span>Took part in research with <b>NTT's Coherent Ising Machine</b> group</span></li>
+      <li><span class="d">2020</span><span>CS50 Puzzle Day (Harvard &times; Facebook): <b>global winner</b> (8/8)</span></li>
+      <li><span class="d">2020</span><span>Joined <b>tensoralpha GmbH</b> as Quantitative Developer Intern</span></li>
+      <li><span class="d">Oct 2019</span><span>Joined <b>RIKEN Japan</b> with <b>Franco Nori</b></span></li>
+      <li><span class="d">Jul 2019</span><span>Started research internship at <b>Microsoft Research India</b></span></li>
+      <li><span class="d">May 2019</span><span>Submitted undergraduate thesis on DMRG for Potts models with <b>Sreejith GJ</b> (IISER Pune)</span></li>
+      <li><span class="d">2019</span><span>Invited to IBM's <b>Qiskit Asia Camp</b></span></li>
+      <li><span class="d">2019</span><span>WorldQuant Challenge: <b>gold ranking</b> for high-Sharpe alphas</span></li>
+      <li><span class="d">Jan 2019</span><span>Started undergraduate thesis research at <b>IISER Pune</b></span></li>
+      <li><span class="d">Dec 2018</span><span>Offered a <b>WorldQuant WebSim</b> research consultant role for exceptional performance</span></li>
+      <li><span class="d">May 2018</span><span>Selected for the ACM Summer School in Cryptology at <b>ISI Calcutta</b></span></li>
+      <li><span class="d">May 2017</span><span>Started R&amp;D internship at <b>Zero Labs</b> (NLP)</span></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="ctitle">academic projects</div>
+    <ul class="projects">
+      <li><b>Exceptional points in non-Hermitian quantum systems.</b> Studied exceptional points and exotic properties of large non-Hermitian systems with an algorithm I developed. <span class="who">with Fabrizio Minganti, RIKEN</span></li>
+      <li><b>Noisy mean-field annealing.</b> Tuned NMFA for NP-hard combinatorial problems using ideas from quantum thermodynamics. <span class="who">with Neill Lambert, Clemens Gneiting, Ken Funo, RIKEN</span></li>
+      <li><b>Quantum overlapping tomography.</b> Built a tomography module using perfect hash families, based on Frank Wilczek's paper, and measured entanglement quality on IBM machines. <span class="who">with Rudy Raymond, IBM Research</span></li>
+      <li><b>PyFroid.</b> A Pandas plugin that gets 100x speedups on some operations through lazy evaluation. <span class="who">with Karthik Ramachandra, MSR India</span></li>
+      <li><b>Speech event segmentation.</b> Better segmentation metrics via quantile analysis of intersyllable durations, and point-process models of syllable events. <span class="who">with Neville Ryant, LDC</span></li>
+      <li><b>Ontology-aware medical concept extraction.</b> BiLSTM-CRF and transformers with UMLS embeddings for EHR entity recognition. <span class="who">with Lyle Ungar, Penn</span></li>
+      <li><b>Neural network potentials.</b> ResNet-based potentials for copper thermal expansion, validated in LAMMPS. <span class="who">with Paris Perdikaris, Penn</span></li>
+      <li><b>Quantum and classical key exchange protocols.</b> Cryptology research at the ACM Summer School, one of the top 50 undergrads selected nationwide. <span class="who">ISI Calcutta</span></li>
+      <li><b>Computational geometry library.</b> C++ implementations of convex hulls, polygon triangulation and point visibility. <span class="who">with Tathagata Ray, BITS Pilani</span></li>
+      <li><b>MPI parallel code optimization.</b> PETSc-based aerofoil sensitivity analysis on hybrid GPU-CPU systems. <span class="who">with N. Anil, BITS Pilani</span></li>
+      <li><b>Data envelopment analysis for student performance.</b> DEA-based efficiency analysis of student input factors. <span class="who">with Srinivasa Raju, BITS Pilani</span></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="ctitle">patents</div>
+    <div class="pub">
+      <div>Cache-Generated Frequently Asked Questions Page</div>
+      <div class="pv">US Patent 12,572,536 (granted Mar 2026)</div>
+      <div class="pa"><b>T. Raheja</b>, R. Sinha, W. Healy, J. Srinivasa, A. Deepak, R. Kompella, A. Payani</div>
+    </div>
+    <div class="pub">
+      <div>Automatic Retrieval Augmented Generation with Expanding Context</div>
+      <div class="pv">US Patent App. 18/442,996 (2025)</div>
+      <div class="pa">A. Deepak, W. Healy, <b>T. Raheja</b>, J. Srinivasa, R. Kompella, R. Sinha</div>
+    </div>
+    <div class="pub">
+      <div>Memory-Based Function Calling for Logical Formulation and Inference for LLMs</div>
+      <div class="pv">US Patent App. 18/439,966 (2025)</div>
+      <div class="pa"><b>T. Raheja</b>, A. Deepak, W. Healy, J. Srinivasa, G. Liu, R. Kompella</div>
+    </div>
+    <div class="pub">
+      <div>Performance Monitoring, Mitigation, and Retraining of Large Language Models</div>
+      <div class="pv">US Patent App. 18/440,710 (2025)</div>
+      <div class="pa">A. Deepak, R. Sinha, W. Healy, <b>T. Raheja</b>, J. Srinivasa, R. Kompella</div>
+    </div>
+
+    <div class="ctitle">theses</div>
+    <div class="pub">
+      <div>Learning in Physical Systems</div>
+      <div class="pv">MS thesis, University of Pennsylvania (2024)</div>
+      <div class="pa">Advisor: Andrea Liu</div>
+    </div>
+    <div class="pub">
+      <div>Density Matrix Renormalization Groups for Potts' Model</div>
+      <div class="pv">Undergraduate thesis, BITS Pilani (2019)</div>
+      <div class="pa">Advisor: Sreejith GJ (IISER Pune)</div>
+    </div>
+
+    <div class="ctitle">writing &amp; talks</div>
+    <ul class="news">
+      <li><span class="d">2024</span><span><a href="https://outshift.cisco.com/blog/mastering-the-art-of-prompting-for-large-language-models-reducing-hallucination-and-improving-reasoning">Mastering the Art of Prompting for LLMs: Reducing Hallucination and Improving Reasoning</a> (Cisco Outshift blog)</span></li>
+      <li><span class="d">Dec 2024</span><span>Oral: persistent homology for tactile object recognition, NeurIPS 2024 Workshop on Touch Processing</span></li>
+    </ul>
+
+    <div class="ctitle">reviewing</div>
+    <p style="margin-top:0">Reviewer for ICLR (2025, 2026, 2027) and NeurIPS 2026, plus a dozen workshops.</p>
+    <details>
+      <summary>full list</summary>
+      <div class="dotlist">
+      <a href="https://iclr.cc/Conferences/2027">ICLR 2027</a> &middot;
+      <a href="https://neurips.cc/Conferences/2026">NeurIPS 2026</a> &middot;
+      <a href="https://sites.google.com/view/dynafrontneurips26">NeurIPS 2026 DynaFront</a> &middot;
+      <a href="https://lm4sci.github.io/">COLM 2026 LM4Sci</a> &middot;
+      <a href="https://sites.google.com/view/social-sims-with-llms">COLM 2026 Social Sim</a> &middot;
+      <a href="https://iclr.cc/Conferences/2026">ICLR 2026</a> &middot;
+      <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/ICBINB/Reviewers">ICLR 2026 ICBINB</a> &middot;
+      <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/MM_Intelligence/Reviewers">ICLR 2026 MM Intelligence</a> &middot;
+      <a href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/P-AGI/Reviewers">ICLR 2026 P-AGI</a> &middot;
+      <a href="https://iclr.cc/Conferences/2025">ICLR 2025</a> &middot;
+      <a href="https://openreview.net/group?id=ACM.org%2FTheWebConf%2F2026%2FWorkshop%2FHCRS">WebConf 2026 HCRS</a> &middot;
+      <a href="https://efficient-reasoning.github.io/">NeurIPS 2025 Efficient Reasoning</a> &middot;
+      <a href="https://fpineurips.framer.website/">NeurIPS 2025 Probabilistic Inference</a> &middot;
+      <a href="https://redteaming-gen-ai.github.io/">NeurIPS 2024 RedTeaming GenAI</a> &middot;
+      <a href="https://evaleval.github.io/">NeurIPS 2024 EvalEval</a> &middot;
+      <a href="https://www.touchprocessing.org/2024/">NeurIPS 2024 Touch Processing</a>
+    </div>
+    </details>
+
+    <div class="ctitle">people</div>
+    <p style="margin-top:0">I've been lucky to work with some truly amazing people:</p>
+    <div class="dotlist">
+      <a href="https://scholar.google.com/citations?user=x0NU7KEAAAAJ&hl=en">Andrea Liu</a> (UPenn) &middot;
+      <a href="https://scholar.google.com/citations?user=R--JjPoAAAAJ">Mark Liberman</a> (UPenn) &middot;
+      <a href="https://scholar.google.com/citations?user=SRUYLREAAAAJ&hl=en">Franco Nori</a> (RIKEN) &middot;
+      <a href="https://scholar.google.com/citations?user=4UkpsgsAAAAJ&hl=en">Neill Lambert</a> (RIKEN) &middot;
+      <a href="https://scholar.google.co.in/citations?user=JkA9YJAAAAAJ">Karthik Ramachandra</a> (MSR) &middot;
+      <a href="https://scholar.google.com/citations?user=eVSxiSMAAAAJ&hl=de">Thomas Schmelzer</a> (tensoralpha) &middot;
+      <a href="https://scholar.google.com/citations?user=rHlWpFUAAAAJ&hl=en">Hidenori Tanaka</a> (Harvard/NTT) &middot;
+      <a href="https://scholar.google.com/citations?user=qj3LDGEAAAAJ&hl=en">Fatih Dinc</a> (Stanford) &middot;
+      <a href="https://scholar.google.com/citations?user=gV_XNa0AAAAJ&hl=en">Menachem Stern</a> (UPenn) &middot;
+      <a href="https://scholar.google.co.in/citations?user=G4n2WsAAAAAJ&hl=en">Sreejith GJ</a> (IISER Pune) &middot;
+      <a href="https://scholar.google.com/citations?user=HtNfeKYAAAAJ&hl=en">Jayanth Srinivasa</a> (Cisco Research)
+    </div>
+
+    <div class="ctitle">misc</div>
+    <p style="margin-top:0">Favorite read: <a href="https://www.hpmor.com/">HPMOR</a>.</p>
+  </div>
+
+  <footer>Simple HTML + CSS, no frameworks.</footer>
+
 </body>
 </html>
